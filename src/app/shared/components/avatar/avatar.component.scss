@@ -1,0 +1,50 @@
+:host {
+    display: inline-flex;
+}
+
+.avatar {
+    border-radius: 50%;
+    height: 100%;
+    width: 100%;
+    min-height: 20px;
+    min-width: 20px;
+    background-color: var(--v-primary-base);
+    display: inline-block;
+    position: relative;
+
+    &-default {
+        display: flex;
+        align-items: center;
+        justify-self: center;
+        color:#fff
+    }
+
+    @for $i from 20 through 150 {
+    
+        &__size_#{$i} {
+            min-height:#{$i}px!important;
+            min-width:#{$i}px!important;
+            height:#{$i}px!important;
+            width:#{$i}px!important;
+            max-height:#{$i}px!important;
+            max-width:#{$i}px!important;
+        }
+    }
+
+    &__size_full {
+        min-height:100%!important;
+        min-width:100%!important;
+        height:100%!important;
+        width:100%!important;
+        max-height:100%!important;
+        max-width:100%!important;
+    }
+
+    div {
+        position: absolute;
+        inset: 0;
+        background-size: cover;
+        background-position: center;
+    }
+
+}

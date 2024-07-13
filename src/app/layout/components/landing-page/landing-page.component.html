@@ -1,10 +1,9 @@
 <div class="LandingPage">
-    
+
     <section class="sliderContainer">
 
         <div id="carouselL" class="carousel carousel-dark slide container" data-bs-ride="carousel">
     
-
             <div class="carousel-inner">
 
               <div class="carousel-item active">
@@ -20,7 +19,12 @@
                         </h5>
     
                       </div>
-                      <div class="carousel-itemContainer-part carousel-itemContainer-part_flex1"></div>
+                      <div class="carousel-itemContainer-part carousel-itemContainer-part_center carousel-itemContainer-part_flex1">
+
+                         <img class="mainImage" src="../../../../assets/images/slide-photo.svg" />
+                         <img class="badgeImage" src="../../../../assets/images/Frame 1.png" />
+
+                      </div>
 
                 </div>
 
@@ -39,7 +43,12 @@
                         </h5>
     
                       </div>
-                      <div class="carousel-itemContainer-part carousel-itemContainer-part_flex1"></div>
+                      <div class="carousel-itemContainer-part carousel-itemContainer-part_flex1">
+                        
+                        <img class="mainImage" src="../../../../assets/images/slide-photo.svg" />
+                        <img class="badgeImage" src="../../../../assets/images/Frame 1.png" />
+
+                      </div>
 
                 </div>
 
@@ -58,7 +67,12 @@
                         </h5>
     
                       </div>
-                      <div class="carousel-itemContainer-part carousel-itemContainer-part_flex1"></div>
+                      <div class="carousel-itemContainer-part carousel-itemContainer-part_flex1">
+
+                        <img class="mainImage" src="../../../../assets/images/slide-photo.svg" />
+                        <img class="badgeImage" src="../../../../assets/images/Frame 1.png" />
+
+                      </div>
 
                 </div>
 
@@ -81,8 +95,104 @@
 
     </section>
 
-     <section class="container">
-         <nifas-swiper-slider />  
-     </section>
- 
+    <section class="container">
+        <nifas-swiper-slider [items]="swiperSliderItems" [sectionTitle]="'Our Offers'"/>  
+    </section>
+
+    <section class="ourServicesSection">
+     
+        <div class="ourServicesSection-container container">
+
+            <h1>Our Services</h1>
+            <div class="ourServicesSection-container-end">
+                @for(item of ourServicesItems;track $index){
+                <div class="ourServicesItem">
+
+                    <img class="badgeImage" src="../../../../assets/images/Heart Rate.svg" />
+                    <h6>{{item.label}}</h6>
+
+                </div>
+                }
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="aboutAsSection">
+     
+        <div class="aboutAsSection-container container">
+
+            <div class="aboutAsSection-section">
+
+                <div class="aboutAsSection-imgContainer">
+
+                    <img class="mainPage" src="../../../../assets/images/sectionFiveImage.png" />
+                    <img class="secondPage" src="../../../../assets/images/fram2.png" />
+
+                </div>
+                <div class="aboutAsSection-textContainer">
+
+                    <h1>About Us</h1>
+                    <h5>
+                        The concept of Nifas It was born from the collective experience of Dr. Marwah Hassounah with moms and babies through her years of breastfeeding counseling, as well as her personal motherhood experience. In December 2022, the idea evolved into a formulated business model when Dr. Marwah participated in the Mohammed Bin Salman Foundation’s (MISK) SPARK program for aspiring entrepreneurs. Nifas won first place among the training program’s aspiring business projects, receiving a monetary prize from MISK, office space from Monsha’at, and commendation from Neom.
+                    </h5>
+
+                </div>
+
+            </div>
+            <div class="aboutAsSection-section aboutAsSection-section_alignItemsStart">
+
+                <div class="aboutAsSection-textContainer">
+
+                    <h5 class="mt-10">
+                        Today, Nifas is a registered Saudi company with headquarters in Riyadh, established in 2023. It holds a commercial registration number CR 1010917772 and is registered with the Ministry of Health for telemedicine, virtual care, and home health care. Nifas provides social and medical services and products for moms and babies that can be easily accessed from the comfort of their homes.
+                    </h5>
+
+                </div>
+                <div class="aboutAsSection-imgContainer">
+
+                    <img class="mainPage" src="../../../../assets/images/sectionFourImage.jpeg" />
+
+                </div>
+
+            </div>
+
+            <div class="aboutAsSection-endSection">
+
+                <div class="aboutAsSection-endSection-item">
+
+                    <div class="aboutAsSection-endSection-item-start">
+
+                        <div class="aboutAsImgContainer">
+                            <img src="../../../../assets/images/compassion.svg.png" />
+                        </div>
+                        <h3>Vision</h3>
+
+                    </div>
+                    <h6>A community of mothers enjoying their motherhood journey with their happy and healthy babies.</h6>
+
+                </div>
+
+                <div class="aboutAsSection-endSection-item">
+
+                    <div class="aboutAsSection-endSection-item-start">
+
+                        <div class="aboutAsImgContainer">
+                            <img src="../../../../assets/images/compassion.svg.png" />
+                        </div>
+                        <h3>Our Mission</h3>
+
+                    </div>
+                    <h6>Achieving mom and baby bio-psycho-social wellbeing through comprehensive services easily accessed at home. .</h6>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+    
 </div>

@@ -26,10 +26,27 @@
                             flex-direction: column;
                             justify-content: center;
                             gap: var(--space-4);
+                            position: relative;
     
+                            .mainImage {
+                                width: 353px;
+                                height: 353px;
+                            }
+
+                            .badgeImage {
+                                position: absolute;
+                                bottom: 25%;
+                                right: 0;
+                            }
+
                             &_flex1 {
                                 flex: 1;
                                 width: 0;
+                            }
+
+                            &_center {
+                                align-items: center;
+                                justify-self: center;
                             }
 
                             h1, h3 {
@@ -52,8 +69,7 @@
 
             &-indicators {
                 display: flex;
-                gap: var(--space-5);
-
+ 
                 button {
                     width: var(--space-6);
                     height: var(--space-6);
@@ -73,12 +89,164 @@
                     
                     span {
                         display: block;
-                        width: 10px;
+                        width: var(--space-2);
+                        height: var(--space-2);
                         flex-shrink: 0;
-                        height: 10px;
                         border-radius: 100% !important;
                         background-color: var(--v-primary-base) !important;
                     }
+                }
+            }
+        }
+    }
+
+    .ourServicesSection {
+        background: var(--v-primarylight-base);
+
+        &-container {
+            padding-block: var(--space-12);
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-15);
+
+            h1 {
+                font-weight: bold;
+                line-height: 67px;
+                color: var(--color-0);
+                width: 100%;
+                text-align: center;
+            }
+
+            &-end {
+                display: flex;
+                flex-wrap: wrap;
+                gap: var(--space-7);
+                align-items: center;
+                justify-content: center;
+
+                .ourServicesItem {
+                    width: 270px;
+                    height: 180px;
+                    box-shadow: 0px 34px 44px 0px #D5DBE470;
+                    border-radius: var(--space-2);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: var(--space-5);
+                    background-color: var(--bg-0);
+                    cursor: pointer;
+                    flex-direction: column;
+
+                    label {
+                        font-weight: 500;
+                    }
+                }
+            }
+        }
+    }
+
+    .aboutAsSection {
+        min-height: 300px;
+
+        &-container {
+            padding-block: var(--space-30) var(--space-20);
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-20);
+        }
+
+        &-section {
+            display: flex;
+            align-items: flex-end;
+            gap: var(--space-12);
+
+            &_alignItemsStart {
+                align-items: flex-start;
+            }
+        }
+
+        &-imgContainer {
+            height: 422px;
+            flex: 1;
+            position: relative;
+
+            .mainPage {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+                border-radius: var(--space-5);
+            }
+
+            .secondPage {
+                width: 167px;
+                height: 167px;
+                position: absolute;
+                right: -85px;
+                top: -85px;
+                border-radius: 100%;
+            }
+        }
+
+        &-textContainer {
+            flex: 2;
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-5);
+
+            h1 {
+                font-weight: bold;
+                line-height:67px;
+            }
+
+            h5 {
+                line-height: 29px;
+                color: var(--color-5);
+            }
+        }
+
+        &-endSection {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-8);
+
+            &-item {
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                width: 390px;
+                height: 258px;
+                gap: var(--space-8);
+                border-radius: var(--space-6);
+                box-shadow: 0px 4px 21px 1px #307BC41A;
+                background-color: var(--bg-0);
+                padding-inline:  var(--space-7);
+
+                &-start {
+                    display: flex;
+                    align-items: center;
+                    gap: var(--space-5);
+
+                    .aboutAsImgContainer {
+                        width: 45px;
+                        height: 45px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        background-color: var(--v-primary-base);
+                        border-radius: 100%;
+                    }
+
+                    h3 {
+                        color: var(--color-0);
+                        line-height: 40px;
+                        font-weight: 600;
+                    }
+                }
+
+                h6 {
+                    line-height: 26px;
+                    color: var(--color-5);
                 }
             }
         }

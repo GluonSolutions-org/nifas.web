@@ -1,3 +1,18 @@
+.three-dots {
+    white-space: nowrap;
+    overflow: hidden !important;
+    text-overflow: ellipsis;
+
+    @for $i from 1 through 4 {
+        &-#{$i}-line {
+            -webkit-line-clamp: $i;
+            display: -webkit-box !important;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+    }
+}
+
 mat-toolbar {
     background-color: unset !important;
     width: auto !important;
@@ -32,5 +47,45 @@ mat-toolbar {
 
     &-hr {
         border-top: 1px solid var(--bg-5);
+    }
+}
+
+.pCarousel {
+
+    button.p-ripple {
+        display: none;
+    }
+
+    .p-carousel-indicators {
+        list-style-type: none;
+        display: flex;
+        align-items: center;
+        margin: 0 !important;
+        margin-top: var(--space-7) !important;
+
+        li {
+            flex-shrink: 0;
+            display: flex;
+            width: 42px;
+            height: 42px;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(0, 0, 0, 0);
+            border-radius: 100%;
+
+            &.p-highlight{
+                border: 1px solid var(--color-3) !important;
+            }
+
+            button {
+                width: var(--space-2);
+                height: var(--space-2);
+                padding: 0 !important;
+                display: block;
+                border: 0;
+                margin: 0 !important;
+                background-color: var(--v-primary-base) !important;
+            }
+        }
     }
 }
