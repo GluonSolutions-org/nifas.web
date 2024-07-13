@@ -19,7 +19,7 @@
 
             <div class="endArea-tabs">
 
-                <a class="active" (click)="scrollToSection(landingPageSetionsNameEnum.AboutUs)">
+                <a [routerLink]="['/landing-page']" routerLinkActive="active" (click)="scrollToSection(landingPageSetionsNameEnum.AboutUs)">
                     Home
                 </a>
                 <a (click)="scrollToSection(landingPageSetionsNameEnum.Ourvision)">

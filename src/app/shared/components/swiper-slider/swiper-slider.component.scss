@@ -1,0 +1,15 @@
+.swiperSlider {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-24);
+    padding-block: var(--space-24);
+    align-items: center;
+    justify-self: center;
+    color: var(--color-0);
+    overflow: hidden;
+
+    h1 {
+        font-weight: bold;
+        line-height:67px
+    }
+}

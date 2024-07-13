@@ -8,24 +8,11 @@
     height: 100vh;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
 
     &-bottom {
         flex: 1;
-        display: flex;
-        overflow: hidden;
+        overflow: auto;
         background: var(--container-background);
-
-        &-start {
-            height: 100%;
-            overflow: hidden;
-            display: flex;
-            position: relative;
-        }
-    
-        &-end {
-            height: 100%;
-            overflow: hidden;
-            flex: 1;
-        }
     }
 }

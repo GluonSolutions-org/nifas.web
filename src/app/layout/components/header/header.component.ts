@@ -7,6 +7,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButton } from '@angular/material/button';
 import {MatTooltip} from '@angular/material/tooltip';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'nifas-header',
@@ -14,6 +15,7 @@ import {MatTooltip} from '@angular/material/tooltip';
   styleUrl: './header.component.scss',
   standalone: true,
   imports:[
+    RouterModule,
     MatMenuModule,
     MatIconModule,
     MatToolbarModule,

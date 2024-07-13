@@ -1,0 +1,86 @@
+.LandingPage {
+    
+    .sliderContainer {
+        background: var(--v-primarylight-base);
+         
+        .carousel {
+            height: 632.54px;
+
+            &-inner {
+                height: 100%;
+
+                .carousel {
+
+                    &-item  {
+                        height: 100%;
+                    }
+
+                    &-itemContainer {
+                        gap: var(--space-1);
+                        display: flex;
+                        height: 100%;
+
+                        &-part {
+                            height: 100%;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            gap: var(--space-4);
+    
+                            &_flex1 {
+                                flex: 1;
+                                width: 0;
+                            }
+
+                            h1, h3 {
+                                font-weight: bold;
+                                line-height:67px;
+
+                                span {
+                                    color: var(--color-3);
+                                }
+                            }
+
+                            h5 {
+                                color: var(--color-4);
+                                line-height: 32px
+                            }
+                        }
+                    }
+                }
+            }
+
+            &-indicators {
+                display: flex;
+                gap: var(--space-5);
+
+                button {
+                    width: var(--space-6);
+                    height: var(--space-6);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    opacity: 1;
+                    border: 0;
+                    margin: 0 !important;
+                    background-color: unset !important;
+                    border: 1px solid rgba(0, 0, 0, 0);
+                    padding: var(--space-2);
+
+                    &.active {
+                        border: 1px solid var(--color-3) !important;
+                    }
+                    
+                    span {
+                        display: block;
+                        width: 10px;
+                        flex-shrink: 0;
+                        height: 10px;
+                        border-radius: 100% !important;
+                        background-color: var(--v-primary-base) !important;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -75,11 +75,11 @@ header {
                 white-space: nowrap;
 
                 &:Hover {
-                    color: var(--v-primarydark-base);
+                    color: var(--color-3);
                 }
 
                 &.active {
-                    color: var(--v-primarydark-base);
+                    color: var(--color-3);
                     font-weight: 700;
                 }
             }
