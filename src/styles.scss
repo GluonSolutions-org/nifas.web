@@ -1,0 +1,30 @@
+/* You can add global styles to this file, and also import other style files */
+@import "variables";
+@import "base";
+@import "reset";
+
+body, p {
+    margin: 0 !important;
+}
+
+ /* Firefox */
+ * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--v-primary-base) #ffffff;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 16px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #ffffff;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: var(--v-primary-base);
+    border-radius: 10px;
+    border: 3px solid #ffffff;
+  }
+ 

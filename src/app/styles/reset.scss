@@ -1,0 +1,36 @@
+mat-toolbar {
+    background-color: unset !important;
+    width: auto !important;
+} 
+
+.mat-mdc-menu-panel {
+    width: 250px;
+    padding: 0 !important;
+    background-color: var(--bg-0) !important;
+    overflow: hidden !important;
+}
+.mat-mdc-menu-content {
+    padding: 0 !important;
+} 
+
+.matMenu {
+    &-containerItem {
+        padding: 20px !important;
+        color: var(--color-0);
+
+        button {
+            margin-inline: -20px !important;
+            width: calc(100% + 40px) !important;
+            padding-inline: 20px !important;
+            color: var(--color-0);
+
+            mat-icon {
+                color: var(--color-0) !important;
+            }
+        }
+    }
+
+    &-hr {
+        border-top: 1px solid var(--bg-5);
+    }
+}

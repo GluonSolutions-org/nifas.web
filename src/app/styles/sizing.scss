@@ -1,0 +1,15 @@
+$steps: 251;
+$increment: 1;
+
+@for $i from 0 through $steps {
+  .height-#{$i} {
+    height: $i * $increment + px;
+  }
+}
+
+
+@for $i from 0 through $steps {
+  .width-#{$i} {
+    width: $space * $i;
+  }
+}

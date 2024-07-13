@@ -1,0 +1,12 @@
+.authContainer {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-0);
+
+    &-end {
+        flex: 1;
+        overflow: hidden;
+        padding-top: var(--space-19);
+        min-height:100vh !important;
+    }
+}

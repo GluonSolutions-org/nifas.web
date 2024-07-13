@@ -1,0 +1,127 @@
+@import "base.scss";
+
+:host {
+    --input-checkbox-color: var(--color-basic-white);
+    --input-checkbox-checked-color: var(--background-color-praimary);
+    --input-checkbox-hover-background-color: var(--color-brand-700);
+    --input-checkbox-hover-focus-color: var(--color-brand-900);
+    --input-disable-mode-color: var(--color-blueGray-400);
+}
+
+.checkboxContainer {
+    position: relative;
+}
+
+.checkbox {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap:var(--space-1);
+
+    * {
+        cursor: pointer;
+    }
+
+    &.disabledMode {
+        pointer-events: none;
+
+        .cursorNotAllowedContainer {
+            display: block;
+        }
+    }
+}
+
+.cursorNotAllowedContainer {
+    cursor: not-allowed;
+    position: absolute;
+    inset: 0;
+    display: none;
+
+    &.disabledMode {
+        display: block;
+    }
+}
+
+input[type=checkbox] {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -o-appearance: none;
+    outline: none;
+    content: none;
+    border-radius: var(--border-radius_xs);
+
+    &.inputDisabledMode {
+
+        &:checked {
+
+            &:before {
+                background-color: var(--input-disable-mode-color);
+            }
+        }
+
+ 
+    }
+
+    &:Hover {
+
+        &:checked {
+
+            &:before {
+                background-color: var(--input-checkbox-hover-background-color);
+            }
+        }
+
+    }
+
+    &:focus {
+
+        &:checked {
+
+            &:before {
+                background-color: var(--input-checkbox-hover-focus-color);
+            }
+        }
+
+        &:before {
+            border: 1px solid var(--input-checkbox-hover-focus-color);
+        }
+    }
+
+    &:before {
+        font-family: 'Material Symbols Outlined';
+        content: "\e876";
+        box-sizing: border-box;
+        font-size: 14px;
+        color: transparent !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 18px;
+        height: 18px;
+        border: 1px solid var(--border-color-tertiary);
+        border-radius: var(--border-radius_xs);
+    }
+
+    &.IndeterminateMode {
+        &:before {
+            content: "\e15b" !important;
+            font-size: 18px;
+            color: var(--input-checkbox-color) !important;
+            background-color: var(--input-checkbox-checked-color);
+        }
+
+        &.inputDisabledMode {
+            &:before {
+                background-color: var(--input-disable-mode-color);
+            }
+        }
+    }
+
+    &:checked {
+
+        &:before {
+            color: var(--input-checkbox-color) !important;
+            background-color: var(--input-checkbox-checked-color);
+        }
+    }
+}

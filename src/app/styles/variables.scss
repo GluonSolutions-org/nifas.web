@@ -1,0 +1,41 @@
+:root {
+    --font-family: 'Tijawal';
+
+    --v-anchor-base: #BB9BFA;
+    --v-primarylight-base: #D6C3FC;
+    --v-primary-base: #BB9BFA;
+    --v-primarydark-base: #BB9BFA;
+    --v-secondarylight-base: #BB9BFA;
+    --v-secondary-base: #BB9BFA;
+    --v-secondarydark-base: #564872;
+
+    --bg-0: #FFF;
+    --bg-1: #fafafa;
+    --bg-2: #f5f5f5;
+    --bg-3: #eeeeee;
+    --bg-4: #e0e0e0;
+    --bg-5: #bdbdbd;
+    --bg-6: #000;
+
+    --color-0: #000000;
+    --color-1: #FFFFFF;
+
+    --con-1: rgba(0, 0, 0, 0.87);
+    --con-2: rgba(0, 0, 0, 0.54);
+    --con-3: rgba(0, 0, 0, 0.38);
+    --con-4: rgba(0, 0, 0, 0.12);
+    --con-5: rgba(0, 0, 0, 0.08);
+    --con-6: rgba(0, 0, 0, 0.04);
+
+    //Dark Mode
+    // --bg-0: #424242;
+    // --bg-1: #303030;
+    // --bg-2: #212121;
+    // --bg-3: #757575;
+    // --bg-4: #616161;
+    // --bg-5: #000;
+    // --color-0:  #FFFFFF;
+    // --color-1: #000000;
+}
+
+$space: 4px;

@@ -1,0 +1,52 @@
+.ourNewsCard {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 .1rem 1rem rgba(0, 0, 0, 0.1);
+    border-radius: 1em;
+    background: #ECE9E6;
+    background: linear-gradient(to right, #bb9bfa, #d0bafc03);
+    width: 100%;
+    padding: var(--space-6) var(--space-3);
+    z-index: 1;
+    position: relative;
+    gap: var(--space-6);
+
+    &-logoContainr {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: var(--space-3);
+
+        .imgOne {
+            width: 100px;
+        }
+
+        .imgTwo {
+            width: 390px;
+        }
+    }
+
+    &-body {
+
+        span, a {
+            background: linear-gradient(to bottom, #bb9bfa, #d3bffb);
+            padding: .25em .75em;
+            border-radius: 1em;
+            font-size: .75rem;
+            color: var(--color-0) !important;
+        }
+
+        p {
+            color: var(--color-0) !important;
+        }
+
+        a {
+            cursor: pointer;
+        }
+    }
+
+    &-date {
+        color: var(--color-0) !important;
+    }
+}

@@ -1,0 +1,69 @@
+<header>
+    <div class="container">
+
+        <nav class="logoContainer">
+
+            <button class="btn mobileMenuBtn" (click)="openBurgerMenu()" type="button">
+                <mat-icon>menu</mat-icon>
+            </button>
+
+            <div (click)="goToLandingPage()">
+                <img src="/assets/images/logo.png"  />
+                <span>NIFAS</span>
+            </div>
+
+        </nav>
+
+        <nav class="endArea">
+
+            <div class="endArea-tabs">
+
+                <a class="btn" (click)="scrollToSection(landingPageSetionsNameEnum.AboutUs)">
+                    معلومات عنا
+                </a>
+                <a class="btn" (click)="scrollToSection(landingPageSetionsNameEnum.Ourvision)">
+                    رؤيتنا
+                </a>
+                <a class="btn" (click)="scrollToSection(landingPageSetionsNameEnum.OurMission)">
+                    مهمتنا
+                </a>
+                <a class="btn" (click)="scrollToSection(landingPageSetionsNameEnum.OurServices)">
+                    خدماتنا
+                </a>
+                <a class="btn" (click)="scrollToSection(landingPageSetionsNameEnum.OurNews)">
+                    أخبارنا
+                </a>
+                <a class="btn" (click)="scrollToSection(landingPageSetionsNameEnum.CallUs)">
+                    اتصل بنا
+                </a>
+
+            </div>
+            <mat-toolbar>
+                <button mat-button class="menuLabel" [matMenuTriggerFor]="menu">
+                    English
+                </button>
+            </mat-toolbar>
+            <mat-menu #menu="matMenu">
+
+                <!-- <div class="matMenu-containerItem" (click)="$event.stopPropagation();">
+                    Theme Mode
+                    <div class="toggleContainer mt-4">
+                        <nifas-toggle [endLabel]="'Dark'" [startLabel]="'Light'"/>
+                    </div>
+                </div>
+                <div class="matMenu-hr"></div> -->
+                <div class="matMenu-containerItem" (click)="$event.stopPropagation();">
+                    Language
+                    <button mat-menu-item>
+                        <mat-icon>language</mat-icon>
+                        English
+                    </button>
+
+                </div>
+
+            </mat-menu>
+
+        </nav>
+ 
+    </div>
+</header>

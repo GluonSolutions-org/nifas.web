@@ -1,0 +1,56 @@
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-block: 80px;
+    gap: var(--space-6);
+
+    .logo {
+        display: flex;
+        align-items: center;
+        gap: var(--space-1);
+        
+        img {
+            filter: grayscale(1) contrast(0.5) brightness(1.5);
+            width: 48px;
+        }
+
+        h6 {
+            font-size: 1.25rem !important;
+            font-weight: bold;
+            line-height: 2rem;
+            letter-spacing: 0.0125em !important;
+            margin: 0;
+            color: var(--color-0) !important;
+        }
+    }
+
+    .footerDesc {
+        font-size: 14px;
+        color: var(--color-0) !important;
+    }
+
+    .aGroup {
+        display: flex;
+        align-items: center;
+        gap: var(--space-4);
+
+        a {
+            cursor: pointer;
+            color: var(--v-primary-base);
+            font-size: 14px;
+            font-weight: bold;
+        }
+    }
+
+    .socmed {
+        display: flex;
+        align-items: center;
+        gap: var(--space-4);
+
+        img {
+            width: 36px;
+            height: 36px;
+        }
+    }
+}

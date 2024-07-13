@@ -1,0 +1,33 @@
+<div class="burgerMenu" [class.show]="isOpen" (click)="closeBurgerMenu()">
+
+    <div class="burgerMenu-container"  (click)="onBoxClick($event)">
+
+        <div class="burgerMenu-container-start">
+            <mat-icon>drag_handle</mat-icon>
+        </div>
+        <div class="burgerMenu-container-end">
+
+            <a (click)="scrollToSection(landingPageSetionsNameEnum.AboutUs)">
+                معلومات عنا
+            </a>
+            <a (click)="scrollToSection(landingPageSetionsNameEnum.Ourvision)">
+                رؤيتنا
+            </a>
+            <a (click)="scrollToSection(landingPageSetionsNameEnum.OurMission)">
+                مهمتنا
+            </a>
+            <a (click)="scrollToSection(landingPageSetionsNameEnum.OurServices)">
+                خدماتنا
+            </a>
+            <a (click)="scrollToSection(landingPageSetionsNameEnum.OurNews)">
+                أخبارنا
+            </a>
+            <a (click)="scrollToSection(landingPageSetionsNameEnum.CallUs)">
+                اتصل بنا
+            </a>
+
+        </div>
+
+    </div>
+
+</div>

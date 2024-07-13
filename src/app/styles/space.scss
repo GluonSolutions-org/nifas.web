@@ -1,0 +1,88 @@
+@import "variables";
+
+
+@for $i from 0 through 100 {
+  :root {
+    --space-#{$i}: #{$space * $i};
+  }
+
+  .p-#{$i} {
+    padding: $space * $i !important;
+  }
+
+  .pt-#{$i} {
+    padding-top: $space * $i !important;
+  }
+
+  .pb-#{$i} {
+    padding-bottom: $space * $i !important;
+  }
+
+  .pr-#{$i} {
+    padding-right: $space * $i !important;
+  }
+
+  .pl-#{$i} {
+    padding-left: $space * $i !important;
+  }
+
+  .pv-#{$i} {
+    padding-block: $space * $i !important;
+  }
+
+  .ph-#{$i} {
+    padding-inline: $space * $i !important;
+  }
+
+  .m-#{$i} {
+    margin: $space * $i !important;
+  }
+
+  .mt-#{$i} {
+    margin-top: $space * $i !important;
+  }
+
+  .mb-#{$i} {
+    margin-bottom: $space * $i !important;
+  }
+
+  .mr-#{$i} {
+    margin-inline-end: $space * $i !important;
+  }
+
+  .ml-#{$i} {
+    margin-inline-start: $space * $i !important;
+  }
+
+  .mv-#{$i} {
+    margin-block: $space * $i !important;
+  }
+
+  .mh-#{$i} {
+    margin-inline: $space * $i !important;
+  }
+
+  .gap-#{$i} {
+    gap: $space * $i !important;
+  }
+
+  .gap-row-#{$i} {
+    row-gap: $space * $i !important;
+  }
+
+  .gap-column-#{$i} {
+    column-gap: $space * $i !important;
+  }
+
+  .gap-gap-#{$i} {
+    grid-gap: $space * $i !important;
+  }
+
+  .flex-#{$i} {
+    flex: $i !important;
+  }
+
+  .flex-base-#{$i} {
+    flex-basis: $space * $i;
+  }
+}

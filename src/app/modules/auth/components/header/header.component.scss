@@ -1,0 +1,107 @@
+header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 999;
+    width: 100%;
+    height: 75px;
+    position: fixed;
+    
+    .mobileMenuBtn {
+        display: none;
+        border: 0 !important;
+
+        mat-icon {
+            font-size: 30px;
+            color: var(--color-0);
+        }
+    }
+
+    .container {
+        display: flex;
+        align-items: center;
+        gap: var(--space-6);
+    }
+
+    .logoContainer {
+        font-size: 20px;
+        cursor: pointer;
+        display: flex;
+        gap: var(--space-1);
+        align-items: center;
+
+        span {
+            font-weight: bold;
+            color: var(--color-0);
+        }
+
+        img {
+            width: 75px;
+        }
+    }
+
+    .endArea {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        gap: var(--space-6);
+
+        &-tabs {
+            flex: 1;
+            display: flex;
+            align-items: center;
+
+            a {
+                font-size: 18px;
+                font-weight: bold;
+                font-family: var(--font-family);
+                position: relative;
+                border: 0 !important;
+                border-radius: 0 !important;
+                color: var(--color-0);
+
+                &:Hover {
+                    color: var(--v-primarydark-base);
+
+                    &::after {
+                        width: 60% !important;
+                    }
+                }
+
+                &::after {
+                    content: "";
+                    right: 12px;
+                    height: 5px;
+                    border-radius: 5px;
+                    width: 0%;
+                    position: absolute;
+                    bottom: -5px;
+                    -webkit-transition: all 0.2s cubic-bezier(0.42, 0.16, 0.21, 0.93);
+                    -o-transition: all 0.2s cubic-bezier(0.42, 0.16, 0.21, 0.93);
+                    transition: all 0.2s cubic-bezier(0.42, 0.16, 0.21, 0);
+                    background: var(--v-primary-base);
+                }
+
+                &.active {
+                    color: var(--v-primarydark-base);
+
+                    &::after {
+                        width: 60% !important;
+                    }
+                }
+            }
+        }
+
+        .menuLabel {
+            font-size: 18px;
+            color: var(--color-0) ;
+        }
+    }
+}
+
+.toggleContainer {
+    display: flex;
+    justify-content: center;
+}
