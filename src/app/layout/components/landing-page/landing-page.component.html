@@ -1,5 +1,5 @@
 <div class="LandingPage">
-
+    
     <section class="sliderContainer">
 
         <div id="carouselL" class="carousel carousel-dark slide container" data-bs-ride="carousel">
@@ -120,9 +120,9 @@
 
     </section>
 
-    <section class="aboutAsSection">
+    <section class="aboutAsSection container">
      
-        <div class="aboutAsSection-container container">
+        <div class="aboutAsSection-container">
 
             <div class="aboutAsSection-section">
 
@@ -192,7 +192,16 @@
             </div>
 
         </div>
+        <div class="aboutAsSection-background"></div>
 
     </section>
-    
+
+    <section class="container">
+        <nifas-swiper-slider 
+            [items]="swiperSliderItemsTwo" 
+            [isCardView]="true"
+            [sectionOthorTitle]="'Blog & News'" 
+            [sectionTitle]="'Read Our Latest News'"/>  
+    </section>
+
 </div>

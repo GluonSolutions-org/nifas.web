@@ -1,5 +1,6 @@
 .LandingPage {
-    
+    overflow: hidden;
+
     .sliderContainer {
         background: var(--v-primarylight-base);
          
@@ -71,17 +72,15 @@
                 display: flex;
  
                 button {
-                    width: var(--space-6);
-                    height: var(--space-6);
+                    width: var(--space-6) !important;
+                    height: var(--space-6) !important;
                     display: flex;
                     align-items: center;
                     justify-content: center;
                     opacity: 1;
-                    border: 0;
                     margin: 0 !important;
                     background-color: unset !important;
                     border: 1px solid rgba(0, 0, 0, 0);
-                    padding: var(--space-2);
 
                     &.active {
                         border: 1px solid var(--color-3) !important;
@@ -146,13 +145,15 @@
     }
 
     .aboutAsSection {
-        min-height: 300px;
+        position: relative;
 
         &-container {
             padding-block: var(--space-30) var(--space-20);
             display: flex;
             flex-direction: column;
             gap: var(--space-20);
+            z-index: 1;
+            position: relative;
         }
 
         &-section {
@@ -249,6 +250,16 @@
                     color: var(--color-5);
                 }
             }
+        }
+
+        &-background {
+            background: var(--v-primarylight-base);
+            height: 547px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100vw;
+            border-start-start-radius: 200px;
         }
     }
 }

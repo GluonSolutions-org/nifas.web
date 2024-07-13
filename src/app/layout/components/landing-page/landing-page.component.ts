@@ -96,6 +96,73 @@ export class LandingPageComponent extends BaseComponent {
     }
   ]
 
+  swiperSliderItemsTwo: ISwiperSliderItems[] = [
+    {
+      id: 0,
+      description: 'Nifas wins first place in SPARK program by MISK for aspiring entrepreneurs!',
+      image: '/assets/images/cardViewImageOne.jfif',
+      programName: 'SPARK program',
+      date: '13th December 2022'
+    },
+    {
+      id: 2,
+      description: 'Nifas wins first place in SPARK program by MISK for aspiring entrepreneurs!',
+      image: '/assets/images/cardViewImageTwo.jfif',
+      programName: 'SPARK program',
+      date: '13th December 2022'
+    },
+    {
+      id: 3,
+      description: 'Nifas wins first place in SPARK program by MISK for aspiring entrepreneurs!',
+      image: '/assets/images/cardViewImageThree.jfif',
+      programName: 'SPARK program',
+      date: '13th December 2022'      
+    },
+    {
+      id: 4,
+      description: 'Nifas wins first place in SPARK program by MISK for aspiring entrepreneurs!',
+      image: '/assets/images/cardViewImageOne.jfif',
+      programName: 'SPARK program',
+      date: '13th December 2022'      
+    },
+    {
+      id: 5,
+      description: 'Nifas wins first place in SPARK program by MISK for aspiring entrepreneurs!',
+      image: '/assets/images/cardViewImageTwo.jfif',
+      programName: 'SPARK program',
+      date: '13th December 2022'      
+    },
+    {
+      id: 6,
+      description: 'Nifas wins first place in SPARK program by MISK for aspiring entrepreneurs!',
+      image: '/assets/images/cardViewImageThree.jfif',
+      programName: 'SPARK program',
+      date: '13th December 2022'      
+    },
+    {
+      id: 7,
+      description: 'Nifas wins first place in SPARK program by MISK for aspiring entrepreneurs!',
+      image: '/assets/images/cardViewImageOne.jfif',
+      programName: 'SPARK program',
+      date: '13th December 2022'      
+    },
+    {
+      id: 8,
+      description: 'Nifas wins first place in SPARK program by MISK for aspiring entrepreneurs!',
+      image: '/assets/images/cardViewImageTwo.jfif',
+      programName: 'SPARK program',
+      date: '13th December 2022'      
+    },
+    {
+      id: 9,
+      description: 'Nifas wins first place in SPARK program by MISK for aspiring entrepreneurs!',
+      image: '/assets/images/cardViewImageThree.jfif',
+      programName: 'SPARK program',
+      date: '13th December 2022'      
+    }
+  ]
+
+
   constructor(injector: Injector,public messagingService : MessagingService) {
     super(injector);
   }

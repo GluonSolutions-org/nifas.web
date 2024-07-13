@@ -15,8 +15,10 @@ import { AvatarComponent } from '../avatar/avatar.component';
 })
 export class SwiperSliderComponent extends BaseComponent {
 
+  @Input() sectionOthorTitle !: string;
   @Input() sectionTitle !: string;
   @Input() items: ISwiperSliderItems[] = [];
+  @Input() isCardView : boolean = false;
 
   responsiveOptions: any[] | undefined;
   autoplayInterval = 3000;  

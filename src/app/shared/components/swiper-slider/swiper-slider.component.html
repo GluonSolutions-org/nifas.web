@@ -1,25 +1,30 @@
 <div class="swiperSlider">
 
-    <h1 *ngIf="sectionTitle">{{sectionTitle}}</h1>
+    <div class="swiperSlider-top">
+        <h5 *ngIf="sectionOthorTitle">{{sectionOthorTitle}}</h5>
+        <h1 *ngIf="sectionTitle">{{sectionTitle}}</h1>
+    </div>
 
     <ng-container *ngIf="items">
 
+        <!-- [autoplayInterval]="autoplayInterval" -->
         <p-carousel class="pCarousel" 
-            [autoplayInterval]="autoplayInterval"
+
             [value]="items" 
             [numVisible]="3" 
             [numScroll]="3" 
             [responsiveOptions]="responsiveOptions"
             [circular]="false">
 
-        <ng-template let-items pTemplate="item">
-                <div class="swiperSlider-item">
+        <ng-template let-item pTemplate="item">
+
+                <div class="swiperSlider-item" *ngIf="!isCardView">
                     
-                    <div class="swiperSlider-item-container" [ngStyle]="{ 'background-image': 'url(' + items.image + ')' }">
+                    <div class="swiperSlider-item-container" [ngStyle]="{ 'background-image': 'url(' + item.image + ')' }">
 
                         <div class="swiperSlider-item-endArea">
 
-                            <h5 class="three-dots"  matTooltip="{{items.description}}">{{items.description}}</h5>
+                            <h5 class="three-dots"  matTooltip="{{item.description}}">{{item.description}}</h5>
                             <nifas-avatar [size]="40"/>
 
                         </div>
@@ -28,6 +33,38 @@
                     </div>
 
                 </div>
+
+                <div class="swiperSliderCardView-item" *ngIf="isCardView">
+
+                    <div class="swiperSliderCardView-item-container">
+                        
+                        <div class="swiperSliderCardView-item-start">
+
+                            <img [src]="item.image" />
+    
+                        </div>
+                        <div class="swiperSliderCardView-item-end">
+
+                            <div class="endContainer">
+
+                                <div class="swiperSliderCardView-item-end-h5Group">
+
+                                    <h6>{{item.programName}}</h6>
+                                    <div class="divider1 divider1__vertical height-15"></div>
+                                    <h6>{{item.date}}</h6>
+    
+                                </div>
+                                <h6 class="three-dots-2-line" matTooltip="{{item.description}}">{{item.description}}</h6>
+    
+
+                            </div>
+                         
+                        </div>
+
+                    </div>
+
+                </div>
+
         </ng-template>
 
     </p-carousel>

@@ -1,0 +1,11 @@
+.divider1 {
+    background-color: var(--color-8);
+
+    &__horizontal {
+        height: 1px;
+    }
+
+    &__vertical {
+        width: 1px;
+    }
+}
