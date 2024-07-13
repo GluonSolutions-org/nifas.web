@@ -1,0 +1,54 @@
+<header>
+
+    <div class="container">
+
+        <nav class="logoContainer">
+
+            <button class="btn mobileMenuBtn" (click)="openBurgerMenu()" type="button">
+                <mat-icon>menu</mat-icon>
+            </button>
+
+            <div>
+                <img src="/assets/images/logo.png"  />
+                <span>NIFAS</span>
+            </div>
+
+        </nav>
+
+        <nav class="endArea">
+
+            <div class="endArea-tabs">
+
+                <a class="active" (click)="scrollToSection(landingPageSetionsNameEnum.AboutUs)">
+                    Home
+                </a>
+                <a (click)="scrollToSection(landingPageSetionsNameEnum.Ourvision)">
+                    Our Services
+                </a>
+                <a (click)="scrollToSection(landingPageSetionsNameEnum.OurMission)">
+                    About Us
+                </a>
+                <a (click)="scrollToSection(landingPageSetionsNameEnum.OurServices)">
+                    News
+                </a>
+                <a (click)="scrollToSection(landingPageSetionsNameEnum.OurNews)">
+                    Contact Us
+                </a>
+
+            </div>
+            <div class="endArea-btnGroup">
+
+                <button class="btn btn-purble btn-purble__filled width-35" matTooltip="Login">
+                    Login
+                </button>
+                <button class="btn btn-purble btn-purble__outline width-35" matTooltip="Signup">
+                    Signup
+                </button>
+
+            </div>
+
+        </nav>
+ 
+    </div>
+
+</header>

@@ -63,3 +63,35 @@
         }
     }
 }
+
+@media only screen and (max-width: 600px) {
+
+    .burgerMenu {
+        align-items: unset;
+        justify-content: unset;
+
+        &.show {
+            visibility: visible;
+    
+            .burgerMenu-container {
+                margin-top: 30vh;
+            }
+        }
+
+        &-container {
+            width: 100vw !important;
+            margin-inline-end: unset !important;
+            height: 70vh !important;
+            margin-top: 100vh;
+            border-radius: 25px 25px 0 0;
+
+            &-start {
+                height: 30px !important;
+
+                mat-icon {
+                    display: block !important;
+                }
+            }
+        }
+    }
+}

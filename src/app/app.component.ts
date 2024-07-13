@@ -2,7 +2,6 @@ import { CommonModule } from '@angular/common';
 import { Component, Injector } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { BaseComponent } from './core/components/base.component';
-import { TooltipService } from './shared/tooltip/tooltip.service';
 
 @Component({
   selector: 'app-root',
@@ -14,13 +13,11 @@ import { TooltipService } from './shared/tooltip/tooltip.service';
 export class AppComponent extends BaseComponent {
   title = 'NIFAS';
 
-  constructor(private tooltipService: TooltipService,injector: Injector) {
+  constructor(injector: Injector) {
     super(injector);
   }
 
-  protected override ngSuperOnInit() {
-    this.tooltipService.loadTooltip();
-  }
+  protected override ngSuperOnInit() {}
 
   protected override ngSuperAfterViewInit() {
   }

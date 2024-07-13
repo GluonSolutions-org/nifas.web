@@ -1,32 +1,5 @@
 
 @media only screen and (max-width: 600px) {
-   
-    .authContainer {
-        &.isScrollBottom {
-            header {
-                .logoContainer , mat-toolbar{
-                    color: var(--color-0) !important;
-        
-                    mat-icon, button, span{
-                        color: var(--color-0) !important;
-                    }
-                }
-            }
-        
-        }
-    }
-
-    header {
-
-        .logoContainer , mat-toolbar, .menuLabel{
-            color: var(--color-1) !important;
-
-            mat-icon, button, span {
-                color: var(--color-1) !important;
-            }
-        }
-        
-    }
 
     .landingPageSection_First {
         height: 400px !important;
@@ -125,35 +98,6 @@
         line-height: 24px !important;
         margin-inline: var(--space-6) !important;
     }
-
-    .burgerMenu {
-        align-items: unset;
-        justify-content: unset;
-
-        &.show {
-            visibility: visible;
-    
-            .burgerMenu-container {
-                margin-top: 30vh;
-            }
-        }
-
-        &-container {
-            width: 100vw !important;
-            margin-inline-end: unset !important;
-            height: 70vh !important;
-            margin-top: 100vh;
-            border-radius: 25px 25px 0 0;
-
-            &-start {
-                height: 30px !important;
-
-                mat-icon {
-                    display: block !important;
-                }
-            }
-        }
-    }
 }
 
 @media only screen and (max-width: 768px) {
@@ -166,23 +110,7 @@
     .container {
         max-width: 960px !important;
     }
-
-    header {
-
-        .endArea {
     
-            &-tabs {
-                a {
-                    display: none !important;
-                }
-            }
-        }
-
-        .mobileMenuBtn {
-            display: block !important;
-        }
-    }
-
     .landingPageSection,.blogSection {
         flex-direction: column !important;
     }

@@ -1,12 +1,17 @@
 import { Component, Injector } from '@angular/core';
-import { BaseComponent } from '../../../../core/components/base.component';
-import { MessagingService } from '../../../../core/services/messaging.service';
-import { LandingPageSetionsNameEnum } from '../../enums/LandingPageSectionsName.enum';
+import { MessagingService } from '../../../core/services/messaging.service';
+import { BaseComponent } from '../../../core/components/base.component';
+import { LandingPageSetionsNameEnum } from '../../../modules/auth/enums/LandingPageSectionsName.enum';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'nifas-burger-menu',
   templateUrl: './burger-menu.component.html',
-  styleUrl: './burger-menu.component.scss'
+  styleUrl: './burger-menu.component.scss',
+  standalone: true,
+  imports:[
+    MatIconModule,
+  ]
 })
 export class BurgerMenuComponent extends BaseComponent {
 

@@ -7,6 +7,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { FormModule } from './Forms/form.module';
+import { MatTooltip } from '@angular/material/tooltip';
 
 export const modules: any = [
   FormsModule,
@@ -15,7 +16,8 @@ export const modules: any = [
   MatButtonModule,
   MatMenuModule,
   MatIconModule,
-  FormModule
+  FormModule,
+  MatTooltip
 ]
 
 @NgModule({

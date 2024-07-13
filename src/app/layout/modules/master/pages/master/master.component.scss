@@ -1,0 +1,31 @@
+@import "base.scss";
+
+:host {
+    --container-background: var(--bg-0)
+}
+
+.master {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    &-bottom {
+        flex: 1;
+        display: flex;
+        overflow: hidden;
+        background: var(--container-background);
+
+        &-start {
+            height: 100%;
+            overflow: hidden;
+            display: flex;
+            position: relative;
+        }
+    
+        &-end {
+            height: 100%;
+            overflow: hidden;
+            flex: 1;
+        }
+    }
+}

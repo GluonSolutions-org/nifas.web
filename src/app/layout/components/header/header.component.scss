@@ -3,12 +3,11 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.3s ease;
-    z-index: 999;
     width: 100%;
-    height: 75px;
-    position: fixed;
-    
+    height: 96px;
+    background-color: var(--bg-0);
+    gap: var(--space-1);
+
     .mobileMenuBtn {
         display: none;
         border: 0 !important;
@@ -31,77 +30,85 @@ header {
         display: flex;
         gap: var(--space-1);
         align-items: center;
+        flex: 1;
+
+        div {
+            display: flex;
+            gap: var(--space-2);
+            align-items: center;
+        }
 
         span {
             font-weight: bold;
-            color: var(--color-0);
+            color: var(--color-2);
+            font-size: 35px;
         }
 
         img {
-            width: 75px;
+            width: 58.78px;
+            height: 58.33px;
         }
     }
 
     .endArea {
-        flex: 1;
+        flex: 3;
         display: flex;
         align-items: center;
         gap: var(--space-6);
 
         &-tabs {
-            flex: 1;
+            flex: 2;
             display: flex;
             align-items: center;
+            gap: var(--space-10);
 
             a {
-                font-size: 18px;
-                font-weight: bold;
+                font-size: 14px;
                 font-family: var(--font-family);
-                position: relative;
                 border: 0 !important;
                 border-radius: 0 !important;
                 color: var(--color-0);
+                padding: 0;
+                font-weight: 700;
+                cursor: pointer;
+                text-decoration-line: none;
+                white-space: nowrap;
 
                 &:Hover {
                     color: var(--v-primarydark-base);
-
-                    &::after {
-                        width: 60% !important;
-                    }
-                }
-
-                &::after {
-                    content: "";
-                    right: 12px;
-                    height: 5px;
-                    border-radius: 5px;
-                    width: 0%;
-                    position: absolute;
-                    bottom: -5px;
-                    -webkit-transition: all 0.2s cubic-bezier(0.42, 0.16, 0.21, 0.93);
-                    -o-transition: all 0.2s cubic-bezier(0.42, 0.16, 0.21, 0.93);
-                    transition: all 0.2s cubic-bezier(0.42, 0.16, 0.21, 0);
-                    background: var(--v-primary-base);
                 }
 
                 &.active {
                     color: var(--v-primarydark-base);
-
-                    &::after {
-                        width: 60% !important;
-                    }
+                    font-weight: 700;
                 }
             }
         }
 
-        .menuLabel {
-            font-size: 18px;
-            color: var(--color-0) ;
+        &-btnGroup {
+            display: flex;
+            align-items: center;
+            gap: var(--space-2);
         }
     }
 }
 
-.toggleContainer {
-    display: flex;
-    justify-content: center;
+
+@media only screen and (max-width: 992px) {
+
+    header {
+
+        .endArea {
+    
+            &-tabs {
+                a {
+                    display: none !important;
+                }
+            }
+        }
+
+        .mobileMenuBtn {
+            display: block !important;
+        }
+    }
 }

@@ -1,12 +1,13 @@
 import { Component, Injector } from '@angular/core';
-import { BaseComponent } from '../../../../core/components/base.component';
-import { LandingPageSetionsNameEnum } from '../../enums/LandingPageSectionsName.enum';
-import { MessagingService } from '../../../../core/services/messaging.service';
+import { BaseComponent } from '../../../core/components/base.component';
+import { MessagingService } from '../../../core/services/messaging.service';
+import { LandingPageSetionsNameEnum } from '../../../modules/auth/enums/LandingPageSectionsName.enum';
 
 @Component({
   selector: 'nifas-footer',
   templateUrl: './footer.component.html',
-  styleUrl: './footer.component.scss'
+  styleUrl: './footer.component.scss',
+  standalone: true
 })
 export class FooterComponent  extends BaseComponent {
 
