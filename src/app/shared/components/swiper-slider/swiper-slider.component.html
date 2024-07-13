@@ -7,9 +7,8 @@
 
     <ng-container *ngIf="items">
 
-        <!-- [autoplayInterval]="autoplayInterval" -->
         <p-carousel class="pCarousel" 
-
+            [autoplayInterval]="autoplayInterval"
             [value]="items" 
             [numVisible]="3" 
             [numScroll]="3" 
@@ -20,8 +19,9 @@
 
                 <div class="swiperSlider-item" *ngIf="!isCardView">
                     
-                    <div class="swiperSlider-item-container" [ngStyle]="{ 'background-image': 'url(' + item.image + ')' }">
+                    <div class="swiperSlider-item-container">
 
+                        <img [src]="item.image" />
                         <div class="swiperSlider-item-endArea">
 
                             <h5 class="three-dots"  matTooltip="{{item.description}}">{{item.description}}</h5>
