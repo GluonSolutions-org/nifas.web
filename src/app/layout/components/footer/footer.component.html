@@ -1,31 +1,77 @@
-<footer class="container">
+<footer class="footer">
     
-    <div class="logo">
-        <img src="/assets/images/logo.png" alt="logo">
-        <h6 class="title">Nifas</h6>
+    <div class="footer-top container">
+
+        <div class="footer-top-start">
+
+            <div class="logo">
+                <img src="/assets/images/logo.png" alt="logo">
+                <h2 class="title">Nifas</h2>
+            </div>
+
+            <div class="info">
+
+                <mat-icon fontSet="material-symbols-outlined">phone</mat-icon>
+                <h6>+966 112 150 075</h6>
+
+            </div>
+            <div class="info">
+
+                <mat-icon fontSet="material-symbols-outlined">email</mat-icon>
+                <h6>info&#64;nifas.net</h6>
+
+            </div>
+            <div class="info">
+
+                <mat-icon fontSet="material-symbols-outlined">location_on</mat-icon>
+                <h6>Tahlia Street, Al Abdullatif Buildings Front of Karam Beirut Restaurant, Ist Floor, Office 101 Riyadh, Saudi Arabia</h6>
+
+            </div>
+
+        </div>
+        <div class="footer-top-end">
+
+            <h2>join us</h2>
+            <h6>Subscribe to our mailing list and receive the latest offers, the latest articles, and medical options</h6>
+            <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+                <input type="text" formControlName="email" placeholder="example@email.com"/>
+
+            </form>
+
+        </div>
+
     </div>
-    <p class="footerDesc">الأم و الطفل، سعادة و رعاية</p>
-    <div class="aGroup">
+    <div class="footer-bottom">
 
-        <a (click)="scrollToSection(landingPageSetionsNameEnum.OurMission)">
-            مهمتنا
-        </a>
-        <a (click)="scrollToSection(landingPageSetionsNameEnum.OurServices)">
-            خدماتنا
-        </a>
-        <a (click)="scrollToSection(landingPageSetionsNameEnum.OurNews)">
-            أخبارنا
-        </a>
+        <div class="container">
+            
+            <div class="followUsArea">
+                
+                <h6>
+                    Follow Us
+                </h6>    
+                <div>
 
-    </div>
+                    <a>
+                        <img class="mainPage" src="/assets/images/Frame.png" />
+                    </a>
+                    <a>
+                        <img class="mainPage" src="/assets/images/Frame (1).png" />
+                    </a>
+                    <a>
+                        <img class="mainPage" src="/assets/images/Frame (2).png" />
+                    </a>
 
-    <div class="socmed">
-        <a href="https://www.tiktok.com/nifas.sa?_t=8lmlu8BBkpd&amp;_r=1" target="_blank">
-            <img src="/assets/images/Tiktok.png" alt="">
-        </a>
-        <a href="https://www.instagram.com/nifas.sa/" target="_blank">
-            <img src="/assets/images/Instagram.png" alt="">
-        </a>
+                </div>
+
+            </div>
+            <h6>
+                Happy Baby. Healthy Mom
+            </h6>
+
+        </div>
+
     </div>
 
 </footer>

@@ -99,6 +99,7 @@ header {
     header {
 
         .endArea {
+            gap: unset !important;
     
             &-tabs {
                 a {
@@ -109,6 +110,20 @@ header {
 
         .mobileMenuBtn {
             display: block !important;
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+
+    header {
+        
+        .btn.btn-purble {
+            width: auto !important;
+        }
+
+        .container {
+            gap: unset;
         }
     }
 }

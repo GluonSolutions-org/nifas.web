@@ -1,56 +1,141 @@
-footer {
+.footer {
+    min-height: 480px;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-block: 80px;
-    gap: var(--space-6);
+    flex-direction: column;
+    background-color: var(--v-primary-base);
 
-    .logo {
+    &-top {
+        flex: 1;
         display: flex;
-        align-items: center;
-        gap: var(--space-1);
+        gap: var(--space-6);
+        padding-block: var(--space-4);
+
+        &-start, &-end {
+            flex: 1;
+            width: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: var(--space-7);
+        }
+
+        &-start {
+            display: flex;
+            flex-direction: column;
+
+            .logo {
+                display: flex;
+                align-items: center;
+                gap: var(--space-2);
+                
+                img {
+                    width: 58px;
+                    height: 58px;
+                }
         
-        img {
-            filter: grayscale(1) contrast(0.5) brightness(1.5);
-            width: 48px;
+                h2 {
+                    font-weight: bold;
+                    color: var(--color-1);
+                }
+            }
+
+            .info {
+                display: flex;
+                gap: var(--space-5);
+                margin-inline-start: var(--space-3);
+
+                h6 {
+                    color: var(--color-1);
+                    line-height: 26px;
+                    font-weight: 400;
+                }
+            }
+        
         }
 
-        h6 {
-            font-size: 1.25rem !important;
-            font-weight: bold;
-            line-height: 2rem;
-            letter-spacing: 0.0125em !important;
-            margin: 0;
-            color: var(--color-0) !important;
+        &-end {
+            align-items: center;
+
+            h2 {
+                font-weight: bold;
+                color: var(--color-1);
+            }
+
+            h6 {
+                color: var(--color-1);
+                line-height: 26px;
+                font-weight: 400;
+                width: 416px;
+            }
+
+            input {
+                width: 415px;
+                height: 60px;
+                border-radius: var(--space-9);
+                padding: var(--space-5);
+                background-color: unset;
+                border: 1px solid var(--color-1);
+                outline: unset;
+                color: var(--color-1);
+
+                &::placeholder {
+                    color: var(--color-1);
+                }
+            }
         }
     }
 
-    .footerDesc {
-        font-size: 14px;
-        color: var(--color-0) !important;
-    }
-
-    .aGroup {
+    &-bottom {
+        height: 100px;
+        background-color: var(--bg-0);
         display: flex;
         align-items: center;
-        gap: var(--space-4);
 
-        a {
-            cursor: pointer;
-            color: var(--v-primary-base);
-            font-size: 14px;
-            font-weight: bold;
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .followUsArea {
+                display: flex;
+                align-items: center;
+                gap: var(--space-7);
+
+                h6 {
+                    opacity: 1; 
+                }
+
+                div {
+                    display: flex;
+                    align-items: center;
+                    gap: var(--space-4);  
+
+                    a {
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            h6 {
+                line-height: 26px;
+                color: var(--color-0);
+                opacity: 0.5;
+            }
         }
     }
 
-    .socmed {
+    mat-icon  {
+        width: 20px;
+        height: 20px;
+        border-radius: 100%;
+        background-color: var(--bg-0);
+        color: var(--color-3);
         display: flex;
         align-items: center;
-        gap: var(--space-4);
-
-        img {
-            width: 36px;
-            height: 36px;
-        }
+        justify-content: center;
+        font-size: 15px;
+        position: relative;
+        top: 5px;
+        flex-shrink: 0;
     }
 }

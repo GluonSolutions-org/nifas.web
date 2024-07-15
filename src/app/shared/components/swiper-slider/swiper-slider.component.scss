@@ -2,9 +2,15 @@
     padding-block: var(--space-10) var(--space-24);
     align-items: center;
     justify-self: center;
-    overflow: hidden;
     display: flex;
     flex-direction: column;
+    position: relative;
+
+    .imgTag {
+        right: -25px;
+        position: absolute;
+        top: 125px;
+    }
 
     &-top {
         h1 {
@@ -148,3 +154,11 @@
 
  
  
+@media only screen and (max-width: 768px) {
+
+    .swiperSlider {
+        .imgTag {
+            display: none;
+        }
+    }
+}

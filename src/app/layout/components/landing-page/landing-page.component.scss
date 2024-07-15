@@ -6,6 +6,7 @@
          
         .carousel {
             height: 632.54px;
+            padding-bottom: var(--space-10);
 
             &-inner {
                 height: 100%;
@@ -26,7 +27,7 @@
                             display: flex;
                             flex-direction: column;
                             justify-content: center;
-                            gap: var(--space-4);
+ 
                             position: relative;
     
                             .mainImage {
@@ -36,8 +37,8 @@
 
                             .badgeImage {
                                 position: absolute;
-                                bottom: 25%;
-                                right: 0;
+                                bottom: 145px;
+                                right: 45px;
                             }
 
                             &_flex1 {
@@ -47,7 +48,7 @@
 
                             &_center {
                                 align-items: center;
-                                justify-self: center;
+                                justify-items: center;
                             }
 
                             h1, h3 {
@@ -57,6 +58,10 @@
                                 span {
                                     color: var(--color-3);
                                 }
+                            }
+
+                            h3  {
+                                line-height: 37px;
                             }
 
                             h5 {
@@ -260,6 +265,186 @@
             left: 0;
             width: 100vw;
             border-start-start-radius: 200px;
+        }
+    }
+
+    .downloadAppSection {
+        height: 547px;
+        position: relative;
+        display: flex;
+
+        &-start, &-end {
+            z-index: 1;
+            display: flex;
+            height: 100%;
+        }
+
+        &-start {
+            justify-content: center;
+            align-items: flex-end;
+            flex: 1;
+
+            .saContainer, .sa1Container {
+                height: 100%;
+                overflow: hidden;
+                position: relative;
+            }
+
+            .saContainer {
+                left: 60px;
+
+                .sa {
+                    height: 100%;
+                    position: relative;
+                    top: 150px;
+                }
+            }
+
+            .sa1Container {
+                right: 60px;
+
+                .sa1 {
+                    height: 100%;
+                    position: relative;
+                    top: 100px;
+                }
+            }
+        }
+
+        &-end { 
+            align-items: center;
+            gap: var(--space-10);
+            flex: 2;
+
+            &-startPart {
+                display: flex;
+                align-items: center;
+            }
+
+            &-endPart {
+                display: flex;
+                flex-direction: column;
+                gap: var(--space-10);
+                flex: 1;
+
+                .h1Group {
+                    display: flex;
+                    flex-direction: column;
+
+                    img {
+                        width: 42px;
+                        height: 42px;
+                        margin-inline-start: -45px;   
+                    }
+
+                    h1 {
+                        font-weight: bold;
+                        color: var(--color-0);
+                        line-height: 47px;
+
+                        span {
+                            color: var(--color-3);
+                        }
+                    }
+                }
+
+                .imageGroup {
+                    display: flex;
+                    align-items: center;
+                    gap: var(--space-6);
+
+                    a {
+                        cursor: pointer;
+                    }
+
+                    img {
+                        width: 224px;
+                        height: 69px;
+                    }
+                }
+            }
+        }
+
+        &-background {
+            background: var(--v-primarylight-base);
+            height: 547px;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 100vw;
+            border-start-end-radius: 200px;
+        }
+    }
+}
+
+
+@media only screen and (max-width: 992px) {
+
+  
+    .aboutAsSection {
+
+        &-section {
+            flex-direction: column !important;
+            align-items: center !important;
+
+            &_alignItemsStart {
+                flex-direction: column-reverse !important;
+            }
+        }
+
+        &-imgContainer {
+            flex: unset !important;
+            width: 50% !important;
+            height: auto !important;
+        }
+
+        &-endSection {
+            flex-direction: column !important;
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+
+    .carousel {
+        height: 500px !important;
+
+        &-itemContainer {
+            flex-direction: column-reverse;
+    
+            &-part {
+                flex: unset !important;
+                width: unset !important;
+    
+                .mainImage {
+                    width: 200px !important;
+                    height: 200px !important;
+                }
+    
+                .badgeImage {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .aboutAsSection {
+        &-endSection {
+            &-item {
+                width: 95% !important;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+
+    .aboutAsSection {
+
+        &-imgContainer {
+            .secondPage {
+                display: none;
+            }
         }
     }
 }

@@ -1,18 +1,26 @@
 import { Component, Injector } from '@angular/core';
 import { BaseComponent } from '../../../core/components/base.component';
 import { MessagingService } from '../../../core/services/messaging.service';
-import { LandingPageSetionsNameEnum } from '../../../modules/auth/enums/LandingPageSectionsName.enum';
+import { MatIcon } from '@angular/material/icon';
+import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'nifas-footer',
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.scss',
-  standalone: true
+  standalone: true,
+  imports: [ReactiveFormsModule, MatIcon]
 })
 export class FooterComponent  extends BaseComponent {
 
-  constructor(injector: Injector, public messagingService : MessagingService) {
+  form !: FormGroup;
+
+  constructor(injector: Injector, public messagingService : MessagingService,private fb: FormBuilder) {
     super(injector);
+
+    this.form = this.fb.group({
+      email: ['']
+    });
   }
 
   ngSuperOnInit() { };
@@ -21,13 +29,8 @@ export class FooterComponent  extends BaseComponent {
 
   ngSuperOnDestroy() { }
 
-  scrollToSection(sectionName:LandingPageSetionsNameEnum) {
-    
-    if(!this._router.url.includes('landing-page'))  this._router.navigate(['/auth/landing-page']);
-    setTimeout(() => {
-      this.messagingService.push('scrollToSection',sectionName);
-    }, 0);
-
+  onSubmit() {
+    console.log(this.form.value);
   }
 }
 

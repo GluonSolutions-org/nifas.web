@@ -1,5 +1,5 @@
 <div class="LandingPage">
-    
+
     <section class="sliderContainer">
 
         <div id="carouselL" class="carousel carousel-dark slide container" data-bs-ride="carousel">
@@ -21,8 +21,8 @@
                       </div>
                       <div class="carousel-itemContainer-part carousel-itemContainer-part_center carousel-itemContainer-part_flex1">
 
-                         <img class="mainImage" src="../../../../assets/images/slide-photo.svg" />
-                         <img class="badgeImage" src="../../../../assets/images/Frame 1.png" />
+                            <img class="mainImage" src="/assets/images/slide-photo.svg" />
+                            <img class="badgeImage" src="/assets/images/Frame 1.png" /> 
 
                       </div>
 
@@ -43,10 +43,10 @@
                         </h5>
     
                       </div>
-                      <div class="carousel-itemContainer-part carousel-itemContainer-part_flex1">
+                      <div class="carousel-itemContainer-part carousel-itemContainer-part_center carousel-itemContainer-part_flex1">
                         
-                        <img class="mainImage" src="../../../../assets/images/slide-photo.svg" />
-                        <img class="badgeImage" src="../../../../assets/images/Frame 1.png" />
+                            <img class="mainImage" src="/assets/images/slide-photo.svg" />
+                            <img class="badgeImage" src="/assets/images/Frame 1.png" /> 
 
                       </div>
 
@@ -67,11 +67,11 @@
                         </h5>
     
                       </div>
-                      <div class="carousel-itemContainer-part carousel-itemContainer-part_flex1">
+                      <div class="carousel-itemContainer-part carousel-itemContainer-part_center carousel-itemContainer-part_flex1">
 
-                        <img class="mainImage" src="../../../../assets/images/slide-photo.svg" />
-                        <img class="badgeImage" src="../../../../assets/images/Frame 1.png" />
-
+                            <img class="mainImage" src="/assets/images/slide-photo.svg" />
+                            <img class="badgeImage" src="/assets/images/Frame 1.png" /> 
+ 
                       </div>
 
                 </div>
@@ -99,6 +99,7 @@
         <nifas-swiper-slider [items]="swiperSliderItems" [sectionTitle]="'Our Offers'"/>  
     </section>
 
+
     <section class="ourServicesSection">
      
         <div class="ourServicesSection-container container">
@@ -108,7 +109,7 @@
                 @for(item of ourServicesItems;track $index){
                 <div class="ourServicesItem">
 
-                    <img class="badgeImage" src="../../../../assets/images/Heart Rate.svg" />
+                    <img class="badgeImage" src="/assets/images/Heart Rate.svg" />
                     <h6>{{item.label}}</h6>
 
                 </div>
@@ -120,6 +121,7 @@
 
     </section>
 
+ 
     <section class="aboutAsSection container">
      
         <div class="aboutAsSection-container">
@@ -128,8 +130,8 @@
 
                 <div class="aboutAsSection-imgContainer">
 
-                    <img class="mainPage" src="../../../../assets/images/sectionFiveImage.png" />
-                    <img class="secondPage" src="../../../../assets/images/fram2.png" />
+                    <img class="mainPage" src="/assets/images/sectionFiveImage.png" />
+                    <img class="secondPage" src="/assets/images/fram2.png" />
 
                 </div>
                 <div class="aboutAsSection-textContainer">
@@ -153,7 +155,7 @@
                 </div>
                 <div class="aboutAsSection-imgContainer">
 
-                    <img class="mainPage" src="../../../../assets/images/sectionFourImage.jpeg" />
+                    <img class="mainPage" src="/assets/images/sectionFourImage.jpeg" />
 
                 </div>
 
@@ -166,7 +168,7 @@
                     <div class="aboutAsSection-endSection-item-start">
 
                         <div class="aboutAsImgContainer">
-                            <img src="../../../../assets/images/compassion.svg.png" />
+                            <img src="/assets/images/compassion.svg.png" />
                         </div>
                         <h3>Vision</h3>
 
@@ -180,7 +182,7 @@
                     <div class="aboutAsSection-endSection-item-start">
 
                         <div class="aboutAsImgContainer">
-                            <img src="../../../../assets/images/compassion.svg.png" />
+                            <img src="/assets/images/compassion.svg.png" />
                         </div>
                         <h3>Our Mission</h3>
 
@@ -203,5 +205,50 @@
             [sectionOthorTitle]="'Blog & News'" 
             [sectionTitle]="'Read Our Latest News'"/>  
     </section>
+          
+    <section class="downloadAppSection container">
+ 
+        <div class="downloadAppSection-start">
+
+            <div class="saContainer">
+                <img class="sa" src="/assets/images/sa.png" />
+            </div>
+            <div class="sa1Container">
+                <img class="sa1" src="/assets/images/sa1.png" />
+            </div>
+
+        </div>
+        <div class="downloadAppSection-end">
+
+            <div class="downloadAppSection-end-startPart">
+                <img src="/assets/images/Vector.png" />
+            </div>
+            <div class="downloadAppSection-end-endPart">
+
+                <div class="h1Group">
+
+                    <img src="/assets/images/Group 1000011059.png" />
+                    <h1>Download the</h1>
+                    <h1><span>Nifas</span> App</h1>
+
+                </div>
+                <div class="imageGroup">
+
+                    <a>
+                        <img src="/assets/images/google-play.png" />
+                    </a>
+                    <a>
+                        <img src="/assets/images/app-store.png" />
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="downloadAppSection-background"></div>
+
+    </section>   
 
 </div>
