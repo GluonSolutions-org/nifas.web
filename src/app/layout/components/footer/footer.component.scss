@@ -139,3 +139,44 @@
         flex-shrink: 0;
     }
 }
+
+@media only screen and (max-width: 992px) {
+  
+    .footer {
+        &-top {
+            flex-direction: column !important;
+    
+            &-start, &-end {
+                flex: unset !important;
+                width: unset !important;
+            }
+        }
+    }
+
+}
+
+@media only screen and (max-width: 600px) {
+  
+    .footer {
+
+        &-top {
+            &-end {
+                input {
+                    width: 90vw;
+                }
+
+                
+                h6 {
+                    width: 90vw;
+                }
+            }
+        }
+    
+        &-bottom {
+            .container {
+                flex-direction: column !important;
+            }
+        }
+    }
+
+}
