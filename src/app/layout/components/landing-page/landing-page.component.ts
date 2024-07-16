@@ -5,6 +5,8 @@ import { SwiperSliderComponent } from '../../../shared/components/swiper-slider/
 import { ISwiperSliderItems } from '../../../shared/interfaces/swiper-slider-Items.interface';
 import { IOurServicesItems } from '../../../shared/interfaces/our-services-Items.interface';
 import { MatIconModule } from '@angular/material/icon';
+import { AccordionModule } from 'primeng/accordion';
+import { CommonModule } from '@angular/common';
 
 declare var bootstrap: any; // Declare Bootstrap as any
 
@@ -13,9 +15,34 @@ declare var bootstrap: any; // Declare Bootstrap as any
   templateUrl: './landing-page.component.html',
   styleUrl: './landing-page.component.scss',
   standalone: true,
-  imports:[SwiperSliderComponent, MatIconModule]
+  imports:[CommonModule,SwiperSliderComponent, MatIconModule, AccordionModule]
 })
 export class LandingPageComponent extends BaseComponent {
+
+  activeIndex: number | null = null;
+
+  questions = [
+    {
+      header: 'ما هي منصة الطبي للرعاية الصحية',
+      content: 'منصة الطبي، المنصة الأولى في الوطن العربي التي تقدم خدمة الاستشارات الطبية عن بعد وتتيح للمرضى التواصل مع الأطباء المعتمدين مباشرة من خلال مكالمة هاتفية أو محادثة نصية. وهي المنصة الطبية العربية الأكبر التي تُعنى بتقديم المحتوى الطبي الموثوق.'
+    },
+    {
+      header: 'ما هي منصة الطبي للرعاية الصحية',
+      content: 'منصة الطبي، المنصة الأولى في الوطن العربي التي تقدم خدمة الاستشارات الطبية عن بعد وتتيح للمرضى التواصل مع الأطباء المعتمدين مباشرة من خلال مكالمة هاتفية أو محادثة نصية. وهي المنصة الطبية العربية الأكبر التي تُعنى بتقديم المحتوى الطبي الموثوق.'
+    },
+    {
+      header: 'ما هي منصة الطبي للرعاية الصحية',
+      content: 'منصة الطبي، المنصة الأولى في الوطن العربي التي تقدم خدمة الاستشارات الطبية عن بعد وتتيح للمرضى التواصل مع الأطباء المعتمدين مباشرة من خلال مكالمة هاتفية أو محادثة نصية. وهي المنصة الطبية العربية الأكبر التي تُعنى بتقديم المحتوى الطبي الموثوق.'
+    },
+    {
+      header: 'ما هي منصة الطبي للرعاية الصحية',
+      content: 'منصة الطبي، المنصة الأولى في الوطن العربي التي تقدم خدمة الاستشارات الطبية عن بعد وتتيح للمرضى التواصل مع الأطباء المعتمدين مباشرة من خلال مكالمة هاتفية أو محادثة نصية. وهي المنصة الطبية العربية الأكبر التي تُعنى بتقديم المحتوى الطبي الموثوق.'
+    }
+  ];
+
+  setActiveIndex(index: number | null) {
+    this.activeIndex = this.activeIndex === index ? null : index;
+  }
 
   ourServicesItems : IOurServicesItems[] = [
     {

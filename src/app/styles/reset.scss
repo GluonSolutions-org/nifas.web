@@ -89,3 +89,44 @@ mat-toolbar {
         }
     }
 }
+
+
+.mostFrequentlyAskedQuestions {
+
+    p-accordion {
+
+        .p-accordion {
+            display: flex;
+            gap: var(--space-3);
+            flex-wrap: wrap;
+            align-items: flex-start;
+
+            &-header {
+    
+                a {
+                    color: var(--color-1) !important;
+                    text-decoration: unset;
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                }
+
+                span {
+                    font-weight: bold;
+
+                    .qIcon {
+                        font-size: 18px;
+                    }
+                }
+            }
+
+            &-content {
+                
+                &[aria-hidden='true'] {
+                    padding-top: var(--space-2) !important;
+                }
+            }
+        }
+    }
+    
+}

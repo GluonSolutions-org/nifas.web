@@ -374,9 +374,39 @@
             border-start-end-radius: 200px;
         }
     }
+
+    .mostFrequentlyAskedQuestions {
+        padding-block: var(--space-10);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        h1  {
+            color: var(--color-0);
+            font-weight: bold;
+            line-height:67px;
+        }
+
+        h4 {
+            color: var(--color-6);
+            line-height: 40px;
+        }
+
+        &-cardContainer {
+            margin-top: var(--space-4);
+        }
+        
+        &-card {
+            border-radius: var(--space-2);
+            background: var(--v-primary-base);
+            padding: var(--space-4);
+            color: var(--color-1);
+            flex: 1 1 calc(50% - 12px);
+            min-width: 350px;
+        }
+    }
 }
-
-
 
 @media only screen and (max-width: 1200px) {
 
