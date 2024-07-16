@@ -5,7 +5,6 @@ import { LandingPageSetionsNameEnum } from '../../../modules/auth/enums/LandingP
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatButton } from '@angular/material/button';
 import {MatTooltip} from '@angular/material/tooltip';
 import { RouterModule } from '@angular/router';
 
@@ -19,7 +18,6 @@ import { RouterModule } from '@angular/router';
     MatMenuModule,
     MatIconModule,
     MatToolbarModule,
-    MatButton,
     MatTooltip
   ]
 })
