@@ -1,3 +1,35 @@
-<div></div>
+<div style="display: flex">
 
-log in here
+    <nifas-tabs [tabs]="tabs" (onSelectTab)="onSelectTab($event)" />
+
+</div>
+
+<br>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    
+        <nifas-input 
+            formControlName="email" 
+            [label]="'EmailAddress'"
+            [placeholder]="'Enter email'" /> 
+
+        <nifas-input [type]="'tel'" 
+            formControlName="phone" 
+            [label]="'Phone Number'"
+            [placeholder]="'XX XXX XXXX'" />
+
+        <nifas-input [type]="'password'"
+            formControlName="password" 
+            [label]="'password'"
+            [placeholder]="'********'" /> 
+
+        <button class="btn btn-purble btn-purble__filled" atTooltip="Login">
+            Login
+        </button>
+    </form>
+
+
+ 
+
+<br>
+

@@ -7,6 +7,8 @@ import { AuthRoutingModule } from './auth-routing.module';
 import { AuthComponent } from './pages/auth/auth.component';
 import { SharedModule } from '../../shared/shared.module';
 import { LogInComponent } from './pages/log-in/log-in.component';
+import { TabsComponent } from '../../shared/components/tabs/tabs.component';
+import { InputComponent } from '../../shared/Forms/input/input.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { LogInComponent } from './pages/log-in/log-in.component';
     HttpClientModule,
     AuthRoutingModule,
     RouterModule,
-    SharedModule
+    SharedModule,
+    TabsComponent,
+    InputComponent
   ],
   providers: [],
 })

@@ -2,22 +2,22 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
  
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { FormModule } from './Forms/form.module';
 import { MatTooltip } from '@angular/material/tooltip';
-import { ButtonModule } from 'primeng/button';
+import { TabsComponent } from './components/tabs/tabs.component';
+import { SwiperSliderComponent } from './components/swiper-slider/swiper-slider.component';
+import { AvatarComponent } from './components/avatar/avatar.component';
 
 export const modules: any = [
   FormsModule,
-  ReactiveFormsModule,
-  MatToolbarModule,
-  MatMenuModule,
-  MatIconModule,
+  ReactiveFormsModule, 
   FormModule,
   MatTooltip,
-  ButtonModule
+  MatIconModule,
+  TabsComponent,
+  SwiperSliderComponent,
+  AvatarComponent
 ]
 
 @NgModule({

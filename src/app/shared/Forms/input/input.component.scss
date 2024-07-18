@@ -1,0 +1,95 @@
+@import "base.scss";
+
+.inputComponent {
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+
+    &-label {
+        font-size: 18px;
+        font-weight: 500;
+    }
+
+    &-inputContainer {
+        width: 100%;
+        box-sizing: border-box;
+        background: var(--input-background);
+        border: 1px solid var(--input-border-color);
+        display: flex;
+        align-items: center;
+        padding-inline:var(--space-2);
+        gap:var(--space-1);
+        height: 60px;
+ 
+        &:has(input.invalidStatus) {
+            border: 1px solid var(--border-color-danger);
+        }
+
+        &:focus-within {
+            border-bottom: 3px solid var(--color-3) !important;
+        }
+
+        input {
+            background-color: inherit;
+            border: 0;
+            outline: unset;
+            flex: 1;
+            font-size: 15px;
+            color: var(--input-text-color);
+            height: 52px;
+            
+            &::placeholder {
+                color: var(--input-placeholder-color);
+                opacity: 1;
+            }
+        }
+
+        .showPasswordBtn {
+            cursor: pointer;
+            display: flex;
+            width: 40px;
+            justify-content: center;
+
+            mat-icon {
+                color: var(--color-12);
+            }
+        }
+
+        &-telArea {
+            display: flex;
+            align-items: center;
+            gap: var(--space-3);
+
+            img {
+                width: 40px;
+                overflow: hidden;
+            }
+        }    
+    }
+
+    .disabledMode {
+        background: var(--input-disable-mode);
+        border: 1px solid var(--border-color-primary);
+
+        * {
+            pointer-events: none;
+        }
+
+        input {
+
+            &::placeholder {
+                color: var(--input-disable-mode-text-color);
+                opacity: 1;
+            }
+        }
+
+        &:Hover {
+            cursor: not-allowed;
+        }
+    }
+
+    .required {
+        color: var(--color-13);
+    }
+}

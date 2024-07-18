@@ -2,10 +2,8 @@ import { Component, Injector } from '@angular/core';
 import { BaseComponent } from '../../../core/components/base.component';
 import { MessagingService } from '../../../core/services/messaging.service';
 import { LandingPageSetionsNameEnum } from '../../../modules/auth/enums/LandingPageSectionsName.enum';
-import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import {MatTooltip} from '@angular/material/tooltip';
+import { MatTooltip} from '@angular/material/tooltip';
 import { RouterModule } from '@angular/router';
 
 @Component({
@@ -15,9 +13,7 @@ import { RouterModule } from '@angular/router';
   standalone: true,
   imports:[
     RouterModule,
-    MatMenuModule,
-    MatIconModule,
-    MatToolbarModule,
+    MatIconModule, 
     MatTooltip
   ]
 })

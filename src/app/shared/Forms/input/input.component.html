@@ -1,0 +1,40 @@
+<div class="inputComponent">
+
+    <div *ngIf="!!label">
+        <span class="inputComponent-label">
+            {{label}}
+            <span *ngIf="isRequired" class="required">*</span>
+        </span>
+    </div>
+    <div class="inputComponent-inputContainer" [class.disabledMode]="disabled">
+
+        <div *ngIf="type == 'tel'" class="inputComponent-inputContainer-telArea">
+            <img src="/assets/images/telImg.png" />
+            +966 
+            <div class="divider1 divider1__vertical height-18"></div>
+        </div>
+
+        <input [type]="!isPasswordHidden && type == 'password' ? 'text' : type" 
+            [placeholder]="placeholder" 
+            [(ngModel)]="text"
+            [class.invalidStatus]="isTouched&&invalid"
+            (blur)="onBlur()" 
+            (ngModelChange)="ngModelChange()" />
+
+        <div *ngIf="type == 'password'" class="showPasswordBtn" (click)="showPassword()">
+            <mat-icon fontSet="material-symbols-outlined">
+                <ng-container *ngIf="!isPasswordHidden">visibility</ng-container>
+                <ng-container *ngIf="isPasswordHidden">visibility_off</ng-container>
+            </mat-icon>
+        </div>
+
+    </div>
+
+    <div *ngIf="isTouched && invalid">
+ 
+        <span *ngIf="errors?.required" class="required inputComponent-label">Required</span>
+        <span *ngIf="errors?.email" class="required inputComponent-label">Please enter a valid email !</span> 
+        
+    </div>
+
+</div>

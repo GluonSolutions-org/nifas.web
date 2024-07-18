@@ -13,6 +13,7 @@
     --bg-5: #bdbdbd;
     --bg-6: #000;
     --bg-7: #F0F2F5;
+    --bg-8: #e9ecef;
 
     --color-0: #000000;
     --color-1: #FFFFFF;
@@ -23,6 +24,11 @@
     --color-6: #77829D;
     --color-7: #1B3C74;
     --color-8: #DDDDDD;
+    --color-9: #E4E4E4;
+    --color-10: #B1B1B1;
+    --color-11: #2C2948;
+    --color-12: #6c757d;
+    --color-13: #DC2626;    
 
     --con-1: rgba(0, 0, 0, 0.87);
     --con-2: rgba(0, 0, 0, 0.54);
@@ -30,6 +36,14 @@
     --con-4: rgba(0, 0, 0, 0.12);
     --con-5: rgba(0, 0, 0, 0.08);
     --con-6: rgba(0, 0, 0, 0.04);
+
+    --input-background: var(--bg-0);
+    --input-placeholder-color: var(--color-11);
+    --input-text-color: var(--color-0);
+    --input-border-color: var(--color-10);
+    --input-disable-mode: var(--bg-8);
+    --input-disable-mode-text-color: var(--color-12);
+    --border-color-danger : var(--color-13);
 
     //Dark Mode
     // --bg-0: #424242;
