@@ -2,7 +2,6 @@
     
     <div class="authContainer-start">
         <router-outlet />
-        router here
     </div>
     <div class="authContainer-end">
         
@@ -11,13 +10,86 @@
             <button class="btn btn-purble btn-purble__outline width-24" matTooltip="عربي">
                 عربي
             </button>
-            <button class="btn btn-purble btn-purble__outline" matTooltip="Back">
-                Back
+            <button class="btn btn-purble btn-purble__outline" [routerLink]="['/landing-page']" matTooltip="Back">
+                <mat-icon>home</mat-icon>
             </button>
 
         </div>
         <div class="authContainer-end-bottom">
 
+            <div id="carouselL" class="carousel slide container" data-bs-ride="carousel">
+    
+                <div class="carousel-inner">
+    
+                  <div class="carousel-item active">
+    
+                    <div class="carousel-itemContainer">
+
+                        <div class="carousel-itemContainer-part">
+    
+                            <div class="mainImage">
+                                <img src="/assets/images/slide-auth.png" />
+                            </div>
+                            <h3>Welcome to Our Website !</h3>
+                            <h5>
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
+                            </h5>
+        
+                        </div>
+    
+                    </div>
+    
+                  </div>
+
+                  <div class="carousel-item">
+    
+                    <div class="carousel-itemContainer">
+
+                        <div class="carousel-itemContainer-part">
+    
+                            <div class="mainImage">
+                                <img src="/assets/images/slide-auth-2.png" />
+                            </div>
+                            <h3>All Times With You</h3>
+                            <h5>
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
+                            </h5>
+        
+                        </div>
+    
+                    </div>
+    
+                  </div>
+
+                  <div class="carousel-item">
+    
+                    <div class="carousel-itemContainer">
+
+                        <div class="carousel-itemContainer-part">
+    
+                            <div class="mainImage">
+                                <img src="/assets/images/slide-photo.svg" />
+                            </div>
+                            <h3>Everything you need </h3>
+                            <h5>
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
+                            </h5>
+        
+                        </div>
+    
+                    </div>
+    
+                  </div>
+
+                </div>
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselL" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselL" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselL" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+    
+            </div>
+              
         </div>
 
     </div>

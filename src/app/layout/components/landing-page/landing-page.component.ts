@@ -200,7 +200,7 @@ export class LandingPageComponent extends BaseComponent {
     const carouselElement = document.getElementById('carouselL');
     if (carouselElement) {
       new bootstrap.Carousel(carouselElement, {
-        interval: 50000 // Adjust interval as needed (in milliseconds)
+        interval: 3000 // Adjust interval as needed (in milliseconds)
       });
     }
    };
