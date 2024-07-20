@@ -1,0 +1,29 @@
+<div class="dropDownSelcet">
+
+    <p-floatLabel>
+        <p-dropdown 
+            #dropdown
+            [options]="data"
+            [(ngModel)]="selectedValue"
+            optionLabel="name"
+            [disabled]="disabled"
+            [filter]="showFilter"
+            [showClear]="showClear"
+            [placeholder]="placeholder"
+            inputId="float-label"
+            (onHide)="onDropdownHide();onBlur()"
+            (onChange)="ngModelChange()"
+            (onClear)="onDropdownClear()"
+        />
+        <label for="float-label">
+            {{label}} 
+            <span *ngIf="isRequired" class="required">*</span>
+        </label>
+    </p-floatLabel>
+    <div *ngIf="isTouched && invalid" class="mt-2">
+ 
+        <span *ngIf="errors?.required" class="required singleSelcet-label">Required !!</span>
+        
+    </div>
+
+</div>

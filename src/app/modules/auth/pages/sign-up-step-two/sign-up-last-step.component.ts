@@ -12,6 +12,19 @@ export class SignUpLastStepComponent extends BaseComponent{
 
   signUpForm !: FormGroup;
 
+  insurancesList: any[] = [
+    { name: 'insurances0', id:0 },
+    { name: 'insurances1', id:1 },
+    { name: 'insurances2', id:2 },
+    { name: 'insurances3', id:3 },
+    { name: 'insurances4', id:4 },
+    { name: 'insurances5', id:5 },
+    { name: 'insurances6', id:6 },
+    { name: 'insurances7', id:7 },
+    { name: 'insurances8', id:8 },
+    { name: 'insurances9', id:9 }
+  ];
+
   constructor(injector: Injector, private fb: FormBuilder) {
     super(injector);
 
@@ -21,11 +34,12 @@ export class SignUpLastStepComponent extends BaseComponent{
       rePassword: new FormControl('', [Validators.required]),
       confirmTerms: new FormControl(false, [Validators.requiredTrue]),
       haveInsurance: new FormControl(false),
+      selctedInsurances: new FormControl(null),
     }, { validators: passwordsMatchValidator });
     
   }
 
-  ngSuperOnInit() { };
+  ngSuperOnInit() {};
 
   ngSuperAfterViewInit() {};
 
@@ -38,6 +52,21 @@ export class SignUpLastStepComponent extends BaseComponent{
 
   get passwordsMismatch() {
     return this.signUpForm.errors?.['passwordsMismatch'];
+  }
+
+  toggleChange() {
+     const toogleValue = this.signUpForm.get('haveInsurance')?.value
+     const selctedInsurances = this.signUpForm.get('selctedInsurances')
+
+     if(toogleValue) {
+      selctedInsurances?.setValidators([Validators.required]);
+     } else {
+      selctedInsurances?.setValidators([]);
+     }
+
+     selctedInsurances?.reset();
+     selctedInsurances?.updateValueAndValidity(); 
+
   }
 }
 

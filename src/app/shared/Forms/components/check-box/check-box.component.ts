@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input, ViewChild, forwardRef } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, Output, ViewChild, forwardRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
  
 import { FormsModule, NG_VALUE_ACCESSOR } from '@angular/forms';
@@ -24,6 +24,7 @@ export class CheckBoxComponent {
   @Input() checkboxName !: string;
   @Input('disabled') disabled: boolean = false;
   @Input() value: any = false;
+  @Output('change') change = new EventEmitter();
 
   constructor() {}
 
@@ -45,6 +46,7 @@ export class CheckBoxComponent {
   }
 
   ngModelChange(value: any) {
+    this.change.emit(value)
     this.onChange(this.value);
   }
 }

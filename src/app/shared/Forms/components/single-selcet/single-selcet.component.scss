@@ -1,0 +1,13 @@
+@import "base.scss";
+
+.required {
+    color: var(--color-13);
+}
+
+.singleSelcet {
+
+    &-label {
+        font-size: 18px;
+        font-weight: 500;
+    }
+}

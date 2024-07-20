@@ -39,11 +39,17 @@
                 <div class="toggleContainer mt-1">
 
                     <h6>Do you have insurance?</h6>
-                    <nifas-toggle formControlName="haveInsurance" />
+                    <nifas-toggle (change)="toggleChange()" formControlName="haveInsurance" />
 
                 </div>
 
-                <nifas-check-box class="mt-1"
+                <nifas-single-selcet [hidden]="!signUpForm.get('haveInsurance')?.value"
+                    [label]="'Select insurance'"
+                    [placeholder]="'Select insurance'"
+                    [data]="insurancesList"
+                    formControlName="selctedInsurances" />
+
+                <nifas-check-box class="mt-2"
                     formControlName="confirmTerms"  
                     [label]="'I confirm that I understand the services provided by the Nifas App and I agree to continue viewing the consent form'" />
                                 
