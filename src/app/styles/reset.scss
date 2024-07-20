@@ -130,3 +130,7 @@ mat-toolbar {
     }
     
 }
+
+.cdk-overlay-container {
+    z-index: 10000;
+}

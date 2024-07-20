@@ -38,12 +38,170 @@
             </div>
             <div class="endArea-btnGroup">
 
-                <button class="btn btn-purble btn-purble__filled width-35" [routerLink]="['/auth/log-in']" matTooltip="Login">
-                    Login
-                </button>
-                <button class="btn btn-purble btn-purble__outline width-35" matTooltip="Signup">
-                    Signup
-                </button>
+                <ng-container *ngIf="false">
+
+                    <button class="btn btn-purble btn-purble__filled width-35" [routerLink]="['/auth/log-in']" matTooltip="Login">
+                        Login
+                    </button>
+                    <button class="btn btn-purble btn-purble__outline width-35" [routerLink]="['/auth/sign-up']" matTooltip="Signup">
+                        Signup
+                    </button>
+    
+                </ng-container>
+                <ng-container *ngIf="true">
+                    
+                    <div class="notificationContainer">
+
+                        <span (click)="notification.toggle($event)" class="notificationContainer-btn material-symbols-outlined">
+                            notifications
+                        </span>
+                        <p-overlayPanel #notification>
+                            <div class="notificationContainer-menu">
+ 
+                                <div class="notificationContainer-menu-header">
+        
+                                    <div class="notificationTitles">
+
+                                        <label>Notifications</label>
+                                        <span>8 new notifications</span>
+
+                                    </div>
+                                    <span class="material-symbols-outlined closeIcon" (click)="notification.hide()">
+                                        cancel
+                                    </span>
+
+                                </div>
+                                <div class="notificationContainer-menu-container">
+                                    
+                                    <ng-container *ngFor="let notification of notifications">
+                                        <div class="notificationItem" [class.unRead]="notification.unRead">
+
+                                            <div class="notificationItem-start">
+                                                <span></span>
+                                            </div>
+                                            <div class="notificationItem-end">
+
+                                                <label>{{notification.description}}</label>
+                                                <span>{{notification.date}}</span>
+
+                                            </div>
+
+                                        </div>
+                                    </ng-container>
+
+                                </div>
+                                <div class="notificationContainer-menu-end">
+                                    <a>See All</a>
+                                </div>
+
+                            </div>
+                        </p-overlayPanel>
+
+                    </div>
+                    <div class="profileMenuContainer">
+
+                        <div class="profileMenuContainer-btn" (click)="profileMenu.toggle($event)">
+
+                            <nifas-avatar [size]="47"/>
+                            <label matTooltip="Sarah Ahmad" class="three-dots">Sarah Ahmad</label>
+                            <span class="material-symbols-outlined">
+                                  keyboard_arrow_down
+                            </span>
+                            
+                        </div>
+                        <p-overlayPanel #profileMenu>
+                            <div class="profileMenuContainer-menu">
+
+                                <div class="profileMenuContainer-menu-start">
+                                    
+                                    <div class="profileInfo">
+
+                                        <nifas-avatar [isWhite]="true" [isEditable]="true" [size]="70"/>
+                                        <div class="profileInfo-end">
+
+                                            <label matTooltip="Sarah Ahmad" class="three-dots">Sarah Ahmad</label>
+                                            <div>
+                                                <button class="btn btn-purble btn-purble__outline smallBtn"  matTooltip="Edit">
+                                                    <span class="material-symbols-outlined editIcon">
+                                                        edit_square
+                                                    </span>
+                                                    Edit
+                                                </button>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                    <div class="familyCare">
+
+                                        <label>Family Care</label>
+                                        <div class="familyCare-itemsGroup">
+
+                                            <div class="familyCare-itemsGroup-item">
+
+                                                <nifas-avatar [isWhite]="true" [isEditable]="true" [size]="60"/>
+                                                <span>Add</span>
+                                                
+                                            </div>
+                                            <div class="familyCare-itemsGroup-item">
+
+                                                <nifas-avatar [isWhite]="true" [isEditable]="true" [size]="60"/>
+                                                <span>Add</span>
+                                                
+                                            </div>
+                                            <div class="familyCare-itemsGroup-item">
+
+                                                <nifas-avatar [isWhite]="true" [isEditable]="true" [size]="60"/>
+                                                <span>Add</span>
+                                                
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                                <div class="profileMenuContainer-menu-end">
+
+                                    <div class="profileMenuOption">
+
+                                        <div class="profileMenuOption-iconContainer">
+                                            <span class="material-symbols-outlined">
+                                                history
+                                            </span>
+                                        </div>
+                                        <label>Consultations history</label>
+
+                                    </div>
+                                    <div class="profileMenuOption">
+
+                                        <div class="profileMenuOption-iconContainer">
+                                            <span class="material-symbols-outlined">
+                                                credit_card
+                                            </span>
+                                        </div>
+                                        <label>Payment Methods</label>
+
+                                    </div>
+                                    <div class="profileMenuOption">
+
+                                        <div class="profileMenuOption-iconContainer">
+                                            <span class="material-symbols-outlined">
+                                                settings
+                                            </span>
+                                        </div>
+                                        <label>Setting</label>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </p-overlayPanel>
+
+                    </div>
+    
+                </ng-container>
 
             </div>
 

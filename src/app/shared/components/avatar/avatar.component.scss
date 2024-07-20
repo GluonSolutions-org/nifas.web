@@ -12,11 +12,20 @@
     display: inline-block;
     position: relative;
 
+    &.isWhite {
+        background-color: var(--bg-0);
+        border: 1px solid var(--color-8);
+
+        .avatar-default {
+            color: var(--color-3) !important;
+        }
+    }
+
     &-default {
         display: flex;
         align-items: center;
         justify-self: center;
-        color:#fff
+        color:var(--color-1)
     }
 
     @for $i from 20 through 150 {

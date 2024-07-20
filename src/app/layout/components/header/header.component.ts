@@ -5,6 +5,9 @@ import { LandingPageSetionsNameEnum } from '../../../modules/auth/enums/LandingP
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltip} from '@angular/material/tooltip';
 import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { OverlayPanelModule } from 'primeng/overlaypanel';
+import { AvatarComponent } from '../../../shared/components/avatar/avatar.component';
 
 @Component({
   selector: 'nifas-header',
@@ -12,12 +15,25 @@ import { RouterModule } from '@angular/router';
   styleUrl: './header.component.scss',
   standalone: true,
   imports:[
+    CommonModule,
     RouterModule,
     MatIconModule, 
-    MatTooltip
+    MatTooltip,
+    OverlayPanelModule,
+    AvatarComponent
   ]
 })
 export class HeaderComponent extends BaseComponent {
+
+  notifications = [
+      { description: 'Notifications', date: '12:34 - 20/10/2024', unRead: true },
+      { description: 'Notifications', date: '12:34 - 20/10/2024', unRead: true },
+      { description: 'Notifications', date: '12:34 - 20/10/2024', unRead: true },
+      { description: 'Notifications', date: '12:34 - 20/10/2024', unRead: false },
+      { description: 'Notifications', date: '12:34 - 20/10/2024', unRead: false },
+      { description: 'Notifications', date: '12:34 - 20/10/2024', unRead: false },
+      { description: 'Notifications', date: '12:34 - 20/10/2024', unRead: false }
+  ];
 
   isLandingPage !: boolean;
 

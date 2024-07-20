@@ -11,6 +11,9 @@ import { MatIconModule } from '@angular/material/icon';
 })
 export class AvatarComponent {
  
+  @Input('isWhite') isWhite: boolean = false;
+  @Input('isEditable') isEditable: boolean = false;
+
   image: any;
   size: number =  35
   @Input('size') set _size(val: number) {
