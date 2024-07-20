@@ -1,0 +1,56 @@
+.otpPage {
+
+    .backBtn {
+        border-color: 0;
+        background-color: #EBEBEB99;
+        color: var(--color-3) !important;
+        border-radius: var(--space-3) !important;
+        width: 45px;
+        height: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-inline-start: var(--space-2);
+        margin-block-start: var(--space-5);
+    
+        mat-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+        }
+    
+        &:Hover, &:active {
+            background-color: #EBEBEB99;  
+        }
+    }
+    
+    &-otpHint {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    
+        h6 {
+            color: var(--color-0);
+        }
+    
+        a {
+            cursor: pointer;
+            text-decoration: underline;
+            font-weight: 600;
+        }
+    }
+
+    .authPageContainer-container {
+        gap: var(--space-10) !important;
+
+        form {
+            gap: var(--space-10) !important;
+        }
+
+        &-titleGroup {
+            text-align: center;
+        }
+    }
+}

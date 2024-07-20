@@ -1,0 +1,60 @@
+<div class="authPageContainer">
+
+    <div class="authPageContainer-header">
+
+        <div class="authPageContainer-header-start">
+            <img src="/assets/images/logo.png"  />
+            <h2>NIFAS</h2>
+        </div>
+
+    </div>
+    <div class="authPageContainer-container">
+
+        <div class="authPageContainer-container-titleGroup">
+            <h1>Signup</h1>
+            <h5>Please enter the Name and Password to access your account</h5>
+        </div>
+
+        <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+    
+                <nifas-input 
+                    formControlName="userName" 
+                    [label]="'Full Name'"
+                    [placeholder]="'Enter full name'" /> 
+                
+                <nifas-input [type]="'password'"
+                    formControlName="password" 
+                    [label]="'Password'"
+                    [placeholder]="'********'" /> 
+
+                <nifas-input [type]="'password'"
+                    formControlName="rePassword" 
+                    [label]="'Confirm Password'"
+                    [placeholder]="'********'" />
+                    
+                @if(passwordsMismatch) {
+                    <span class="rePasswordCheckHint">The password do not match !!</span>
+                }
+
+                <div class="toggleContainer mt-1">
+
+                    <h6>Do you have insurance?</h6>
+                    <nifas-toggle formControlName="haveInsurance" />
+
+                </div>
+
+                <nifas-check-box class="mt-1"
+                    formControlName="confirmTerms"  
+                    [label]="'I confirm that I understand the services provided by the Nifas App and I agree to continue viewing the consent form'" />
+                                
+                <button [disabled]="!signUpForm.valid" class="btn btn_large btn-purble btn-purble__filled mt-5" matTooltip="Confirm">
+                    Confirm
+                </button> 
+
+        </form>
+
+    </div>
+
+</div>
+
+ 

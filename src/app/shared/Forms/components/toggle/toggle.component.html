@@ -1,0 +1,11 @@
+<div class="toogleContainer">
+
+    <label *ngIf="!!startLabel">{{startLabel}}</label>
+    <div class="m-toggle" [class.disabledMode]="disabled">
+        <input [(ngModel)]="value" type="checkbox" id="toggle" name="toggle" [value]=value class="switch" [checked]="value" hidden (change)="ngModelChange($event)"/>
+        <label for="toggle"></label>
+        <div class="cursorNotAllowedContainer" [class.disabledMode]="disabled"></div>
+    </div>
+    <label *ngIf="!!endLabel">{{endLabel}}</label>
+
+</div>

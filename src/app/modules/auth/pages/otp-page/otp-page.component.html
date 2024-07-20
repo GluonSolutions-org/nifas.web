@@ -1,0 +1,40 @@
+<div class="authPageContainer otpPage">
+
+    <div class="authPageContainer-header authPageContainer-header_flexCol">
+
+        <div class="authPageContainer-header-start">
+            <img src="/assets/images/logo.png"  />
+            <h2>NIFAS</h2>
+        </div>
+        <button class="btn backBtn" (click)="back()" matTooltip="Back">
+            <mat-icon>keyboard_arrow_left</mat-icon>
+        </button>
+
+    </div>
+    <div class="authPageContainer-container">
+
+        <div class="authPageContainer-container-titleGroup">
+            <h1>Verify Account!</h1>
+            <h5>Enter 4-digit Code code we have sent to at +966 87 878 9890</h5>
+        </div>
+
+        <form [formGroup]="otpForm" (ngSubmit)="onSubmit()">
+    
+            <nifas-otp [otpLength]="6" formControlName="otp"/>
+
+            <div class="otpPage-otpHint">
+                <h6>Didn't receive the code?</h6>
+                <a>Resend Code</a>
+            </div>
+
+            <button [disabled]="!otpForm.valid" class="btn btn_large btn-purble btn-purble__filled" matTooltip="Verify">
+                Verify
+            </button> 
+
+        </form>
+
+    </div>
+
+</div>
+
+ 

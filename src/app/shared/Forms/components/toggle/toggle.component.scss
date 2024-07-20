@@ -1,0 +1,93 @@
+@import "base.scss";
+
+
+:host {
+    position: relative;
+    --m-toggle-background-color: var(--bg-5);
+    --m-toggle-after-background-color: var(--bg-9);
+    --m-toggle-circle-background-color: var(--bg-1);
+    --m-toggle-circle-after-background-color: var(--bg-1);
+}
+
+.toogleContainer {
+    display: flex;
+    align-items: center;
+    gap:var(--space-3);
+}
+
+.m-toggle {
+    display: block;
+    height: 31px;
+    width: 51px;
+
+    &.disabledMode {
+        cursor: not-allowed;
+        opacity: 0.5;
+
+        .cursorNotAllowedContainer {
+            display: block;
+        }
+    }
+}
+
+.cursorNotAllowedContainer {
+    position: absolute;
+    inset: 0;
+    display: none;
+
+    &.disabledMode {
+        display: block;
+    }
+}
+
+.m-toggle input:empty ~ label {
+    position: relative;
+    float: left;
+    width: 150px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.m-toggle input:empty ~ label:before, 
+.m-toggle input:empty ~ label:after {
+    position: absolute;
+    display: block;
+    content: ' ';
+    -webkit-transition: all 250ms cubic-bezier(.4,0,.2,1);
+    transition: all 250ms cubic-bezier(.4,0,.2,1);
+}
+
+.m-toggle input:empty ~ label:before {
+    left: 0px;
+    width: 51px;
+    height: 31px;
+    border-radius: 50px;
+    background-color: var(--m-toggle-background-color);
+}
+
+input.switch:empty ~ label:after {
+    top: 2px;
+    left: 3px;
+    background-color: var(--m-toggle-circle-background-color);
+    border-radius: 50%;
+    width: 27px;
+    height: 27px;
+    box-shadow: 0 3px 4px 0 rgba(0,0,0,.14),0 3px 3px -2px rgba(0,0,0,.2),0 1px 8px 0 rgba(0,0,0,.12);
+}
+
+.m-toggle input[value='true'] ~ label:before {
+    background-color: var(--m-toggle-after-background-color);
+}
+
+.m-toggle input[value='true'] ~ label:after {
+    left: 21px;
+    background-color: var(--m-toggle-circle-after-background-color);
+    border-color: var(--m-toggle-circle-after-background-color);
+}
+
+ 
+ 
+

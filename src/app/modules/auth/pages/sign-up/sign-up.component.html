@@ -1,0 +1,50 @@
+<div class="authPageContainer">
+
+    <div class="authPageContainer-header">
+
+        <div class="authPageContainer-header-start">
+            <img src="/assets/images/logo.png"  />
+            <h2>NIFAS</h2>
+        </div>
+        <div class="authPageContainer-header-end">
+
+            <span>I have an account?</span>
+            <a [routerLink]="['/auth/log-in']">Login!</a>
+
+        </div>
+
+    </div>
+    <div class="authPageContainer-container">
+
+        <div class="authPageContainer-container-titleGroup">
+            <h1>Signup</h1>
+            <h5>You can register via email or phone number</h5>
+        </div>
+        <nifas-tabs [tabs]="tabs" (onSelectTab)="onSelectTab($event)" />
+
+        <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+    
+                <nifas-input 
+                    [hidden]="selctedTab == registrationTabsEnum.phone"
+                    formControlName="email" 
+                    [label]="'Email'"
+                    [placeholder]="'Enter email'" /> 
+
+       
+                <nifas-input [type]="'tel'" 
+                    [hidden]="selctedTab == registrationTabsEnum.email"
+                    [formControlName]="'phone'" 
+                    [label]="'Phone Number'"
+                    [placeholder]="'XX XXX XXXX'" />
+          
+            <button [disabled]="!signUpForm.valid" class="btn btn_large btn-purble btn-purble__filled mt-5" matTooltip="Next">
+                Next
+            </button> 
+
+        </form>
+
+    </div>
+
+</div>
+
+ 

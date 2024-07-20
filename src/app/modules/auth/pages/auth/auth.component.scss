@@ -26,6 +26,30 @@
             justify-content: space-between;
             width: 100%;
             padding: var(--space-9);
+            margin-top: var(--space-4);
+
+            .backBtn {
+                border-color: 0;
+                background-color: var(--bg-0);
+                color: var(--color-3) !important;
+                border-radius: var(--space-3) !important;
+                width: 45px;
+                height: 45px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            
+                mat-icon {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 30px;
+                }
+            
+                &:Hover, &:active {
+                    background-color: var(--bg-0);
+                }
+            }
         }
     
         &-bottom {
@@ -103,6 +127,16 @@
                     }
                 }
             }
+        }
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+  
+    .authContainer {
+
+        &-end {
+            display: none;
         }
     }
 }

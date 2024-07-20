@@ -1,0 +1,14 @@
+<div class="checkboxContainer">
+
+    <label class="checkbox" [class.disabledMode]="disabled">
+
+        <input type="checkbox"
+            [class.inputDisabledMode]="disabled" 
+            [name]="checkboxName" [(ngModel)]="value"
+            (change)="ngModelChange($event)" />
+        <span [ngStyle]="{'font-size': fontSize+'px'}">{{label}}</span>
+    
+    </label>
+    <div class="cursorNotAllowedContainer" [class.disabledMode]="disabled"></div>
+    
+</div>

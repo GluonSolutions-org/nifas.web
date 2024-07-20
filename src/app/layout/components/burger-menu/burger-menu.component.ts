@@ -1,7 +1,6 @@
 import { Component, Injector } from '@angular/core';
 import { MessagingService } from '../../../core/services/messaging.service';
 import { BaseComponent } from '../../../core/components/base.component';
-import { LandingPageSetionsNameEnum } from '../../../modules/auth/enums/LandingPageSectionsName.enum';
 import { MatIconModule } from '@angular/material/icon';
 
 @Component({
@@ -53,12 +52,12 @@ export class BurgerMenuComponent extends BaseComponent {
     document.body.style.overflow = 'hidden';
   }
 
-  scrollToSection(sectionName:LandingPageSetionsNameEnum) {
-    this.closeBurgerMenu();
-    if(!this._router.url.includes('landing-page'))  this._router.navigate(['/auth/landing-page']);
-      setTimeout(() => {
-        this.messagingService.push('scrollToSection',sectionName);
-      }, 0);
-  }
+  // scrollToSection(sectionName:LandingPageSetionsNameEnum) {
+  //   this.closeBurgerMenu();
+  //   if(!this._router.url.includes('landing-page'))  this._router.navigate(['/auth/landing-page']);
+  //     setTimeout(() => {
+  //       this.messagingService.push('scrollToSection',sectionName);
+  //     }, 0);
+  // }
 }
 

@@ -6,11 +6,11 @@ import { RegistrationTabsEnum } from '../../enums/registration-tab.enum';
 
 
 @Component({
-  selector: 'nifas-log-in',
-  templateUrl: './log-in.component.html',
-  styleUrls: ['./log-in.component.scss','../../styles/auth-shared.component.scss']
+  selector: 'nifas-sign-up',
+  templateUrl: './sign-up.component.html',
+  styleUrls: ['./sign-up.component.scss','../../styles/auth-shared.component.scss']
 })
-export class LogInComponent extends BaseComponent{
+export class SignUpComponent extends BaseComponent{
 
   selctedTab : RegistrationTabsEnum = RegistrationTabsEnum.phone;
   registrationTabsEnum = RegistrationTabsEnum;
@@ -26,11 +26,10 @@ export class LogInComponent extends BaseComponent{
     }
   ]
 
-  loginForm: FormGroup = new FormGroup(
+  signUpForm: FormGroup = new FormGroup(
   {
     phone: new FormControl('',[Validators.required,Validators.minLength(11),Validators.maxLength(11)]),
     email: new FormControl('',[]),
-    password: new FormControl('',[Validators.required]),
   })
 
   constructor(injector: Injector) {
@@ -46,15 +45,17 @@ export class LogInComponent extends BaseComponent{
   onSelectTab(id: any) {
     this.selctedTab = id
 
-    const email = this.loginForm.get('email');
-    const phone = this.loginForm.get('phone');
+ 
+
+    let email = this.signUpForm.get('email');
+    let phone = this.signUpForm.get('phone');
 
     switch (this.selctedTab) {
       case this.registrationTabsEnum.phone:
 
         email?.clearValidators();  
         phone?.setValidators([Validators.required,Validators.minLength(11),Validators.maxLength(11)]);
-    
+
         break;
       case this.registrationTabsEnum.email:
 
@@ -65,7 +66,6 @@ export class LogInComponent extends BaseComponent{
       default:
     }
 
-    
     phone?.reset();
     phone?.markAsUntouched();  
     phone?.updateValueAndValidity(); 
@@ -73,11 +73,13 @@ export class LogInComponent extends BaseComponent{
     email?.reset();  
     email?.markAsUntouched();  
     email?.updateValueAndValidity(); 
-    
+
+
   }
 
   onSubmit() { 
-    console.log(this.loginForm.value)
+    console.log(this.signUpForm.value)
+    this._router.navigate(['/auth/otp-page'])
   }
 
 }

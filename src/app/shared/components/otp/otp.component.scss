@@ -1,0 +1,31 @@
+@import 'base';
+
+.ng-otp-input-wrapper  {
+    justify-content: center !important;
+}
+
+.otp-input {
+    background: var(--input-background);
+    border: 1px solid var(--input-border-color);
+    height: 87px !important;
+    width: 75px !important;
+    color: var(--input-text-color);
+    outline: unset !important;
+
+    &:focus-within {
+        border-bottom: 5px solid var(--color-3) !important;
+    }
+}
+
+ 
+@media only screen and (max-width: 768px) {
+    ng-otp-input {
+        zoom: 0.7;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    ng-otp-input {
+        zoom: 0.5;
+    }
+}

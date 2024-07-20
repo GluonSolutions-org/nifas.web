@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, Output, Self } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ControlValueAccessor, FormsModule, NgControl } from '@angular/forms';
 import { MatIcon } from '@angular/material/icon';
+import { inputType } from '../../types/input.type'
 
 @Component({
   selector: 'nifas-input',
@@ -14,7 +15,7 @@ export class InputComponent implements ControlValueAccessor {
 
   isPasswordHidden : boolean = true
 
-  @Input('type') type: string = 'text';
+  @Input('type') type: inputType = 'text';
 
   @Input('disabled') disabled: boolean = false;
   @Input('label') label !: string;
@@ -53,11 +54,7 @@ export class InputComponent implements ControlValueAccessor {
   public get errors(): any {
     return this.controlDirective.control?.errors;
   }
-
-  public get maxLength(): any {
-    return this.controlDirective.control?.errors?.['maxlength']?.requiredLength;
-  }
-
+ 
   public get invalid(): boolean {
     return this.controlDirective.control ? this.controlDirective.control.invalid : false;
   }
@@ -85,5 +82,19 @@ export class InputComponent implements ControlValueAccessor {
 
   showPassword() {
     this.isPasswordHidden = !this.isPasswordHidden
+  }
+
+  formatPhoneNumber(event: Event): void {
+    const input = event.target as HTMLInputElement;
+    let value = input.value.replace(/\D/g, ''); 
+
+    // Format as XX XXX XXXX
+    if (value.length > 2 && value.length <= 5) {
+      value = `${value.slice(0, 2)} ${value.slice(2)}`;
+    } else if (value.length > 5) {
+      value = `${value.slice(0, 2)} ${value.slice(2, 5)} ${value.slice(5, 9)}`;
+    }
+
+    input.value = value;
   }
 }

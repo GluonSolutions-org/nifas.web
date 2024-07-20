@@ -16,11 +16,12 @@
 
         <input [type]="!isPasswordHidden && type == 'password' ? 'text' : type" 
             [placeholder]="placeholder" 
-            [(ngModel)]="text"
+            [(ngModel)]="text" (input)="type == 'tel' ? formatPhoneNumber($event) : ''"
             [class.invalidStatus]="isTouched&&invalid"
-            (blur)="onBlur()" 
+            (blur)="onBlur()" [maxlength]="type == 'tel' ? 11 : null"
             (ngModelChange)="ngModelChange()" />
 
+            
         <div *ngIf="type == 'password'" class="showPasswordBtn" (click)="showPassword()">
             <mat-icon fontSet="material-symbols-outlined">
                 <ng-container *ngIf="!isPasswordHidden">visibility</ng-container>
@@ -32,9 +33,13 @@
 
     <div *ngIf="isTouched && invalid">
  
-        <span *ngIf="errors?.required" class="required inputComponent-label">Required</span>
-        <span *ngIf="errors?.email" class="required inputComponent-label">Please enter a valid email !</span> 
+        <span *ngIf="errors?.required" class="required inputComponent-label">Required !!</span>
+        <span *ngIf="errors?.email" class="required inputComponent-label">Please enter a valid email !!</span> 
+        
+        <span *ngIf="errors?.maxlength || errors?.minlength" class="required inputComponent-label">
+            Please enter a valid number !!
+        </span>
         
     </div>
-
+ 
 </div>

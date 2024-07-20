@@ -1,35 +1,56 @@
-<div style="display: flex">
+<div class="authPageContainer">
 
-    <nifas-tabs [tabs]="tabs" (onSelectTab)="onSelectTab($event)" />
+    <div class="authPageContainer-header">
+
+        <div class="authPageContainer-header-start">
+            <img src="/assets/images/logo.png"  />
+            <h2>NIFAS</h2>
+        </div>
+        <div class="authPageContainer-header-end">
+
+            <span>Don’t have an account?</span>
+            <a [routerLink]="['/auth/sign-up']">Sign up!</a>
+
+        </div>
+
+    </div>
+    <div class="authPageContainer-container">
+
+        <div class="authPageContainer-container-titleGroup">
+            <h1>Welcome Back</h1>
+            <h5>Login into your account</h5>
+        </div>
+        <nifas-tabs [tabs]="tabs" (onSelectTab)="onSelectTab($event)" />
+
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    
+            <nifas-input 
+                [hidden]="selctedTab == registrationTabsEnum.phone"
+                formControlName="email" 
+                [label]="'Email'"
+                [placeholder]="'Enter email'" /> 
+
+            <nifas-input [type]="'tel'" 
+                [hidden]="selctedTab == registrationTabsEnum.email"
+                [formControlName]="'phone'" 
+                [label]="'Phone Number'"
+                [placeholder]="'XX XXX XXXX'" />
+        
+            <nifas-input [type]="'password'"
+                formControlName="password" 
+                [label]="'Password'"
+                [placeholder]="'********'" /> 
+        
+            <a>Forgot password?</a>
+  
+            <button [disabled]="!loginForm.valid" class="btn btn_large btn-purble btn-purble__filled" matTooltip="Login">
+                Login
+            </button> 
+
+        </form>
+
+    </div>
 
 </div>
 
-<br>
-
-    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-    
-        <nifas-input 
-            formControlName="email" 
-            [label]="'EmailAddress'"
-            [placeholder]="'Enter email'" /> 
-
-        <nifas-input [type]="'tel'" 
-            formControlName="phone" 
-            [label]="'Phone Number'"
-            [placeholder]="'XX XXX XXXX'" />
-
-        <nifas-input [type]="'password'"
-            formControlName="password" 
-            [label]="'password'"
-            [placeholder]="'********'" /> 
-
-        <button class="btn btn-purble btn-purble__filled" atTooltip="Login">
-            Login
-        </button>
-    </form>
-
-
  
-
-<br>
-

@@ -1,0 +1,73 @@
+@import "base.scss";
+
+:host {
+    --input-checkbox-color: var(--color-1);
+    --input-checkbox-checked-color: var(--v-primary-base);
+}
+
+.checkboxContainer {
+    position: relative;
+
+    .checkbox {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap:var(--space-3);
+    
+        * {
+            cursor: pointer;
+        }
+    
+        &.disabledMode {
+            pointer-events: none;
+    
+            .cursorNotAllowedContainer {
+                display: block;
+            }
+        }
+    }
+    
+    .cursorNotAllowedContainer {
+        cursor: not-allowed;
+        position: absolute;
+        inset: 0;
+        display: none;
+    
+        &.disabledMode {
+            display: block;
+        }
+    }
+}
+
+input[type=checkbox] {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -o-appearance: none;
+    outline: none;
+    content: none;
+    border-radius: var(--border-radius_xs);
+
+    &:before {
+        font-family: 'Material Symbols Outlined';
+        content: "\e876";
+        box-sizing: border-box;
+        font-size: 20px;
+        color: transparent !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 21px;
+        height: 21px;
+        border: 2px solid var(--input-checkbox-checked-color);
+        border-radius: var(--space-1);
+    }
+ 
+
+    &:checked {
+
+        &:before {
+            color: var(--input-checkbox-color) !important;
+            background-color: var(--input-checkbox-checked-color);
+        }
+    }
+}
