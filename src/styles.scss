@@ -9,21 +9,21 @@ body, p, h1, h2, h3, h4, h5, h6 {
 
  /* Firefox */
  * {
-    scrollbar-width: thin;
-    scrollbar-color: var(--v-primary-base) #ffffff;
-  }
+  scrollbar-width: thin;
+  scrollbar-color: var(--v-primary-base) #ffffff;
+}
 
-  /* Chrome, Edge, and Safari */
-  *::-webkit-scrollbar {
-    width: 16px;
-  }
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+   width: 16px;
+}
 
-  *::-webkit-scrollbar-track {
-    background: #ffffff;
-  }
+*::-webkit-scrollbar-track {
+   background: #ffffff;
+}
 
-  *::-webkit-scrollbar-thumb {
+*::-webkit-scrollbar-thumb {
     background-color: var(--v-primary-base);
     border-radius: 10px;
     border: 3px solid #ffffff;
-  }
+}

@@ -2,6 +2,7 @@ import { Component, Injector, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { LandingPageSetionsNameEnum } from '../../modules/auth/enums/LandingPageSectionsName.enum';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'Nifas-base',
@@ -13,11 +14,13 @@ export abstract class BaseComponent implements OnInit {
 
   public readonly _route: ActivatedRoute;
   public readonly _router: Router;
+  public readonly translate: TranslateService;
 
   protected constructor(protected injector: Injector) {
 
     this._route = injector.get(ActivatedRoute);
     this._router = injector.get(Router);
+    this.translate = injector.get(TranslateService);
 
   }
 

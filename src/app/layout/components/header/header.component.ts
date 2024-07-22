@@ -8,6 +8,7 @@ import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { OverlayPanelModule } from 'primeng/overlaypanel';
 import { AvatarComponent } from '../../../shared/components/avatar/avatar.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'nifas-header',
@@ -20,7 +21,8 @@ import { AvatarComponent } from '../../../shared/components/avatar/avatar.compon
     MatIconModule, 
     MatTooltip,
     OverlayPanelModule,
-    AvatarComponent
+    AvatarComponent,
+    TranslateModule
   ]
 })
 export class HeaderComponent extends BaseComponent {

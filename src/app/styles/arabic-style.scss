@@ -1,0 +1,104 @@
+body.ltr {
+    direction: rtl;
+  
+    * {
+      direction: rtl;
+    }
+  
+    .cdk-visually-hidden {
+      right: 0;
+    }
+
+    .p-carousel-items-container {
+        direction: ltr;
+    }
+
+    .aboutAsSection {
+
+        &-imgContainer {
+
+            .secondPage {
+                left: -85px !important;
+                right: unset !important;
+            }
+        }
+
+        &-background {
+            right: 0 !important;
+            left: unset !important;
+        }
+    }
+
+    .swiperSlider {
+        .imgTag {
+            left: -25px !important;
+            right: unset !important;
+            -webkit-transform: scaleX(-1);
+            transform: scaleX(-1);
+        }
+    }
+
+    .downloadAppSection {
+
+        &-start {
+            .saContainer {
+                margin-left: unset !important;
+                margin-right: -30px !important;
+            }
+            .sa1Container {
+                margin-left: unset !important;
+                margin-right: -150px !important;
+            }
+        }
+
+        &-end { 
+            &-startPart {
+                img {
+                    -webkit-transform: scaleX(-1);
+                    transform: scaleX(-1);
+                }
+            }
+            &-endPart {
+                .h1Group {
+                    img { 
+                        -webkit-transform: scaleX(-1);
+                        transform: scaleX(-1);
+                    }
+                }
+            }
+        }
+        &-background {
+            right: unset !important;
+            left: 0 !important;
+        }
+    }
+
+    .mostFrequentlyAskedQuestions {
+
+        chevronrighticon, .qIcon {
+            -webkit-transform: scaleX(-1);
+            transform: scaleX(-1);
+        }  
+
+        .qIcon {
+            display: inline-block;
+        }
+ 
+    }
+
+    .authContainer {
+
+        &-start {
+
+            .backBtn {
+                -webkit-transform: scaleX(-1);
+                transform: scaleX(-1);
+            }
+        }
+    }
+
+    .m-toggle {
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+    }
+}
