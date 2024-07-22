@@ -1,0 +1,87 @@
+.p-toast {
+
+    .p-toast-message .p-toast-message-content .p-icon:not(.p-toast-icon-close-icon) {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    button.p-ripple.p-element.p-toast-icon-close.p-link {
+        border: 0;
+        overflow: unset;
+        background-color: unset;
+    }
+
+    .p-toast-message {
+        margin: 0 0 1rem 0;
+        box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+        border-radius: 6px;
+        border-width: 0 0 0 6px !important;
+
+        .p-toast-message-content {
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        &.p-toast-message-success {
+            background: rgba(228, 248, 240, 0.7);
+            border: solid #1ea97c;
+            color: #1ea97c;
+
+            .p-toast-icon-close {
+                color: #1ea97c;
+            }
+        }
+    
+        &.p-toast-message-info {
+            background: rgba(219, 234, 254, 0.7);
+            border: solid #3b82f6;
+            color: #3b82f6;
+
+            .p-toast-icon-close {
+                color: #3b82f6;
+            }
+        }
+    
+        &.p-toast-message-warn {
+            background: rgba(255, 242, 226, 0.7);
+            border: solid #cc8925;
+            color: #cc8925;
+
+            .p-toast-icon-close {
+                color: #cc8925;
+            }
+        }
+    
+        &.p-toast-message-error {
+            background: rgba(255, 231, 230, 0.7);
+            border: solid #ff5757;
+            color: #ff5757;
+
+            .p-toast-icon-close {
+                color: #ff5757;
+            }
+        }
+    
+        &.p-toast-message-secondary {
+            background: #64748b;
+            border: solid #64748b;
+            color: #ffffff;
+
+            .p-toast-icon-close {
+                color: #ffffff;
+            }
+        }
+    
+        &.p-toast-message-contrast {
+            background: #1f2937;
+            border: solid #1f2937;
+            color: #ffffff;
+
+            .p-toast-icon-close {
+                color: #ffffff;
+            }
+        }
+    }
+}

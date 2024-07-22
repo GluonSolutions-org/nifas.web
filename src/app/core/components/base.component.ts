@@ -3,6 +3,7 @@ import { Subscription } from 'rxjs';
 import { LandingPageSetionsNameEnum } from '../../modules/auth/enums/LandingPageSectionsName.enum';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
+import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'Nifas-base',
@@ -15,12 +16,14 @@ export abstract class BaseComponent implements OnInit {
   public readonly _route: ActivatedRoute;
   public readonly _router: Router;
   public readonly translate: TranslateService;
+  public readonly _toster: MessageService;
 
   protected constructor(protected injector: Injector) {
 
     this._route = injector.get(ActivatedRoute);
     this._router = injector.get(Router);
     this.translate = injector.get(TranslateService);
+    this._toster = injector.get(MessageService);
 
   }
 

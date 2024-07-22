@@ -101,4 +101,14 @@ body.ltr {
         -webkit-transform: scaleX(-1);
         transform: scaleX(-1);
     }
+
+    .p-toast-top-right {
+        right: unset !important;
+        left: 20px;
+    }
+
+    .p-toast-message {
+        border-width: 0 6px 0 0 !important;
+    }
+ 
 }

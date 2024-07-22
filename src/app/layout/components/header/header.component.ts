@@ -17,12 +17,12 @@ import { TranslateModule } from '@ngx-translate/core';
   standalone: true,
   imports:[
     CommonModule,
+    TranslateModule,
     RouterModule,
     MatIconModule, 
     MatTooltip,
     OverlayPanelModule,
-    AvatarComponent,
-    TranslateModule
+    AvatarComponent
   ]
 })
 export class HeaderComponent extends BaseComponent {
