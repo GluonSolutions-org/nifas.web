@@ -1,5 +1,6 @@
 import { Component, Injector } from '@angular/core';
 import { BaseComponent } from '../../../../../core/components/base.component';
+import { LandingPageService } from '../../services/landing-page.service';
 
 @Component({
   selector: 'nifas-master',
@@ -8,8 +9,20 @@ import { BaseComponent } from '../../../../../core/components/base.component';
 })
 export class MasterComponent extends BaseComponent {
 
-  constructor(injector: Injector) {
+  constructor(injector: Injector, public landingPageService : LandingPageService) {
     super(injector);
+
+    this.landingPageService.getItemsSliders(
+      {
+          "currentPage": 1,
+          "pageSize": 150,
+          "active": 1
+      }
+    ).subscribe({
+      next: (res) => {
+        console.log(res)
+      }
+    })
   }
 
   protected override ngSuperOnInit() {
