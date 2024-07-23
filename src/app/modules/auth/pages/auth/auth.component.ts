@@ -1,6 +1,5 @@
-import { Component, Inject, Injector } from '@angular/core';
+import { Component, Injector } from '@angular/core';
 import { BaseComponent } from '../../../../core/components/base.component';
-import { DOCUMENT } from '@angular/common';
 
 declare var bootstrap: any; // Declare Bootstrap as any
 
@@ -11,9 +10,21 @@ declare var bootstrap: any; // Declare Bootstrap as any
 })
 export class AuthComponent extends BaseComponent{
 
-  constructor(injector: Injector, @Inject(DOCUMENT) private document: Document) {
+  constructor(injector: Injector) {
     super(injector);
   }
+
+  setLanguage(lang:string) {
+    this._langService.setLanguage(lang);
+
+    const body = document.body;
+    if(lang == 'ar') {
+      body.classList.add('ltr');
+    } else {
+      body.classList.remove('ltr');
+    }
+  }
+
 
   ngSuperOnInit() { };
 
@@ -24,7 +35,7 @@ export class AuthComponent extends BaseComponent{
         interval: 3000 // Adjust interval as needed (in milliseconds)
       });
     }
-   };
+  };
 
   ngSuperOnDestroy() { }
 }

@@ -16,30 +16,16 @@ import { ToastModule } from 'primeng/toast';
 })
 export class AppComponent extends BaseComponent {
 
-  language : string = 'en'
-
   title = 'NIFAS';
 
   constructor(injector: Injector) {
     super(injector);
   }
 
-  protected override ngSuperOnInit() {
+  protected override ngSuperOnInit() {}
 
-    this.translate.setDefaultLang(this.language);
-    this.translate.use(this.language);
+  protected override ngSuperAfterViewInit() {}
 
-    const body = document.body;
-    if(this.language == 'ar') {
-      body.classList.add('ltr');
-    } else {
-      body.classList.remove('ltr');
-    }
-
-  }
-
-  protected override ngSuperAfterViewInit() {
-  }
-  protected override ngSuperOnDestroy() {
-  }
+  protected override ngSuperOnDestroy() {}
+  
 }

@@ -4,6 +4,7 @@ import { LandingPageSetionsNameEnum } from '../../modules/auth/enums/LandingPage
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { MessageService } from 'primeng/api';
+import { LanguageService } from '../services/language.service';
 
 @Component({
   selector: 'Nifas-base',
@@ -11,12 +12,15 @@ import { MessageService } from 'primeng/api';
 })
 export abstract class BaseComponent implements OnInit {
 
+  language !: any;
+
   landingPageSetionsNameEnum = LandingPageSetionsNameEnum;
 
   public readonly _route: ActivatedRoute;
   public readonly _router: Router;
   public readonly translate: TranslateService;
   public readonly _toster: MessageService;
+  public readonly _langService: LanguageService;
 
   protected constructor(protected injector: Injector) {
 
@@ -24,7 +28,7 @@ export abstract class BaseComponent implements OnInit {
     this._router = injector.get(Router);
     this.translate = injector.get(TranslateService);
     this._toster = injector.get(MessageService);
-
+    this._langService = injector.get(LanguageService);
   }
 
   ngOnInit() {
@@ -34,6 +38,22 @@ export abstract class BaseComponent implements OnInit {
         window.scrollTo({ top: 0, behavior: 'instant' });
       }
     });
+
+    if(this._langService.getLanguage()) {
+      this.language = this._langService.getLanguage()
+    } else {
+      this.language = 'ar'
+    }
+
+    this.translate.setDefaultLang(this.language);
+    this.translate.use(this.language);
+
+    const body = document.body;
+    if(this.language == 'ar') {
+      body.classList.add('ltr');
+    } else {
+      body.classList.remove('ltr');
+    }
   }
 
   ngAfterViewInit() {

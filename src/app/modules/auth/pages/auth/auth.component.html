@@ -7,9 +7,13 @@
         
         <div class="authContainer-end-top">
 
-            <button class="btn btn-purble btn-purble__outline width-24" matTooltip="عربي">
+            <button class="btn btn-purble btn-purble__outline width-24" *ngIf="language == 'en'" matTooltip="عربي" (click)="setLanguage('ar')">
                 عربي
             </button>
+            <button class="btn btn-purble btn-purble__outline width-24" *ngIf="language == 'ar'" matTooltip="عربي" (click)="setLanguage('en')">
+                english
+            </button>
+
             <button class="btn backBtn" [routerLink]="['/landing-page']" matTooltip="Back">
                 <mat-icon>home</mat-icon>
             </button>
