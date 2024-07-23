@@ -1,4 +1,4 @@
-import { Component, Injector } from '@angular/core';
+import { Component, ElementRef, Injector, ViewChild } from '@angular/core';
 
 import { BaseComponent } from '../../../../core/components/base.component';
 import { ISwiperSliderItems } from '../../../../shared/interfaces/swiper-slider-Items.interface';
@@ -184,9 +184,20 @@ export class LandingPageComponent extends BaseComponent {
     }
   ]
 
+  @ViewChild('home') home!: ElementRef;
+  @ViewChild('aboutUs') aboutUs!: ElementRef;
+  @ViewChild('ourNews') ourNews!: ElementRef;
+  @ViewChild('ourServices') ourServices!: ElementRef;
+  @ViewChild('callUs') callUs!: ElementRef;
 
   constructor(injector: Injector,public messagingService : MessagingService) {
     super(injector);
+
+    this.subscription = this.messagingService.subject('scrollToSection').subscribe({
+      next:(res)=> {
+        this.scrollToSection(res)
+      }
+    })
   }
 
   ngSuperOnInit() { };
@@ -201,5 +212,30 @@ export class LandingPageComponent extends BaseComponent {
    };
 
   ngSuperOnDestroy() { }
+
+  
+  scrollToSection(section: string) {
+    let element: ElementRef;
+    switch (section) {
+      case 'home':
+        element = this.home;
+        break;
+      case 'aboutUs':
+        element = this.aboutUs;
+        break;
+      case 'ourServices':
+        element = this.ourServices;
+        break;
+      case 'ourNews':
+        element = this.ourNews;
+        break;
+      case 'callUs':
+        element = this.callUs;
+        break;
+      default:
+        return;
+    }
+    element.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
 }
 

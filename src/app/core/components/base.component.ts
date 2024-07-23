@@ -33,6 +33,7 @@ export abstract class BaseComponent implements OnInit {
 
   ngOnInit() {
     this.ngSuperOnInit();
+    
     this._router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         window.scrollTo({ top: 0, behavior: 'instant' });

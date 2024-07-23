@@ -19,19 +19,19 @@
 
             <div class="endArea-tabs">
 
-                <a [routerLink]="['/landing-page']" routerLinkActive="active" (click)="scrollToSection(landingPageSetionsNameEnum.AboutUs)">
+                <a [routerLink]="['/landing-page']" class="active" (click)="scrollToSection(landingPageSetionsNameEnum.Home)">
                     {{'HOME' | translate }}
                 </a>
-                <a (click)="scrollToSection(landingPageSetionsNameEnum.Ourvision)">
+                <a (click)="scrollToSection(landingPageSetionsNameEnum.OurServices)">
                     Our Services
                 </a>
-                <a (click)="scrollToSection(landingPageSetionsNameEnum.OurMission)">
+                <a (click)="scrollToSection(landingPageSetionsNameEnum.AboutUs)">
                     About Us
                 </a>
-                <a (click)="scrollToSection(landingPageSetionsNameEnum.OurServices)">
+                <a (click)="scrollToSection(landingPageSetionsNameEnum.OurNews)">
                     News
                 </a>
-                <a (click)="scrollToSection(landingPageSetionsNameEnum.OurNews)">
+                <a (click)="scrollToSection(landingPageSetionsNameEnum.CallUs)">
                     Contact Us
                 </a>
 

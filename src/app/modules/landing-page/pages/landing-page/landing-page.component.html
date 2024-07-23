@@ -1,6 +1,6 @@
 <div class="LandingPage">
 
-    <section class="sliderContainer">
+    <section class="sliderContainer" #home>
 
         <div id="carouselL" class="carousel slide container" data-bs-ride="carousel">
 
@@ -99,7 +99,7 @@
         <nifas-swiper-slider [items]="swiperSliderItems" [sectionTitle]="'Our Offers'"/>
     </section> 
 
-    <section class="ourServicesSection">
+    <section class="ourServicesSection" #ourServices>
 
         <div class="ourServicesSection-container container">
 
@@ -120,7 +120,7 @@
 
     </section> 
      
-    <section class="aboutAsSection container">
+    <section class="aboutAsSection container" #aboutUs>
 
         <div class="aboutAsSection-container">
 
@@ -196,7 +196,7 @@
 
     </section> 
 
-   <section class="container">
+   <section class="container" #ourNews>
         <nifas-swiper-slider
             [items]="swiperSliderItemsTwo"
             [isCardView]="true"
@@ -249,7 +249,7 @@
 
     </section> 
        
-    <section class="mostFrequentlyAskedQuestions container">
+    <section class="mostFrequentlyAskedQuestions container" #callUs>
 
         <h1>الأسئلة الأكثر شيوعاً</h1>
         <h4>

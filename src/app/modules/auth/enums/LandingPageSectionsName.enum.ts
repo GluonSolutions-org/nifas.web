@@ -1,4 +1,5 @@
 export enum LandingPageSetionsNameEnum {
+    Home = "home",
     AboutUs = "aboutUs",
     Ourvision = "ourvision",
     OurMission = "ourMission",

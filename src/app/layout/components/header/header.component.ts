@@ -55,10 +55,10 @@ export class HeaderComponent extends BaseComponent {
 
   scrollToSection(sectionName:LandingPageSetionsNameEnum) {
     
-    // if(!this._router.url.includes('landing-page'))  this.goToLandingPage()
-    // setTimeout(() => {
-    //   this.messagingService.push('scrollToSection',sectionName);
-    // }, 0);
+    //if(!this._router.url.includes('landing-page'))  this.goToLandingPage()
+    setTimeout(() => {
+      this.messagingService.push('scrollToSection',sectionName);
+    }, 0);
 
   }
 
