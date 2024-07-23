@@ -1,12 +1,9 @@
 import { Component, Injector } from '@angular/core';
-import { MessagingService } from '../../../core/services/messaging.service';
-import { BaseComponent } from '../../../core/components/base.component';
-import { SwiperSliderComponent } from '../../../shared/components/swiper-slider/swiper-slider.component';
-import { ISwiperSliderItems } from '../../../shared/interfaces/swiper-slider-Items.interface';
-import { IOurServicesItems } from '../../../shared/interfaces/our-services-Items.interface';
-import { MatIconModule } from '@angular/material/icon';
-import { AccordionModule } from 'primeng/accordion';
-import { CommonModule } from '@angular/common';
+
+import { BaseComponent } from '../../../../core/components/base.component';
+import { ISwiperSliderItems } from '../../../../shared/interfaces/swiper-slider-Items.interface';
+import { MessagingService } from '../../../../core/services/messaging.service';
+import { IOurServicesItems } from '../../../../shared/interfaces/our-services-Items.interface';
 
 declare var bootstrap: any; // Declare Bootstrap as any
 
@@ -14,8 +11,6 @@ declare var bootstrap: any; // Declare Bootstrap as any
   selector: 'nifas-landing-page',
   templateUrl: './landing-page.component.html',
   styleUrl: './landing-page.component.scss',
-  standalone: true,
-  imports:[CommonModule,SwiperSliderComponent, MatIconModule, AccordionModule]
 })
 export class LandingPageComponent extends BaseComponent {
 

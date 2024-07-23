@@ -15,14 +15,17 @@ export class AuthComponent extends BaseComponent{
   }
 
   setLanguage(lang:string) {
-    this._langService.setLanguage(lang);
 
+    this._langService.setLanguage(lang);
     const body = document.body;
     if(lang == 'ar') {
       body.classList.add('ltr');
+      this.language = 'ar'
     } else {
       body.classList.remove('ltr');
+      this.language = 'en'
     }
+
   }
 
 

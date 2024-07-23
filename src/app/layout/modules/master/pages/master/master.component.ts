@@ -1,6 +1,6 @@
 import { Component, Injector } from '@angular/core';
 import { BaseComponent } from '../../../../../core/components/base.component';
-import { LandingPageService } from '../../services/landing-page.service';
+import { LandingPageService } from '../../../../../modules/landing-page/services/landing-page.service';
 
 @Component({
   selector: 'nifas-master',
