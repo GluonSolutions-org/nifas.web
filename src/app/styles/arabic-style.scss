@@ -75,14 +75,10 @@ body.ltr {
 
     .mostFrequentlyAskedQuestions {
 
-        chevronrighticon, .qIcon {
+        chevronrighticon {
             -webkit-transform: scaleX(-1);
             transform: scaleX(-1);
         }  
-
-        .qIcon {
-            display: inline-block;
-        }
  
     }
 

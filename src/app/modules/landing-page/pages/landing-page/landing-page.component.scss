@@ -34,13 +34,7 @@
                                 width: 353px;
                                 height: 353px;
                             }
-
-                            .badgeImage {
-                                position: absolute;
-                                bottom: 145px;
-                                right: 45px;
-                            }
-
+                            
                             &_flex1 {
                                 flex: 1;
                                 width: 0;
@@ -51,17 +45,9 @@
                                 justify-items: center;
                             }
 
-                            h1, h3 {
+                            h1 {
                                 font-weight: bold;
                                 line-height:67px;
-
-                                span {
-                                    color: var(--color-3);
-                                }
-                            }
-
-                            h3  {
-                                line-height: 37px;
                             }
 
                             h5 {

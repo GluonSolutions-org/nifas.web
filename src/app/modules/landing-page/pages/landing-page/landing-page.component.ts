@@ -1,9 +1,14 @@
 import { Component, ElementRef, Injector, ViewChild } from '@angular/core';
 
 import { BaseComponent } from '../../../../core/components/base.component';
-import { ISwiperSliderItems } from '../../../../shared/interfaces/swiper-slider-Items.interface';
 import { MessagingService } from '../../../../core/services/messaging.service';
 import { IOurServicesItems } from '../../../../shared/interfaces/our-services-Items.interface';
+import { LandingPageService } from '../../services/landing-page.service';
+import { ICarouselItems } from '../../interfaces/carousel-Items.interface';
+import { INwesItems } from '../../../../shared/interfaces/news-Items.interface';
+import { IOffersItems } from '../../../../shared/interfaces/offers-Items.interface';
+import { IServiceslItems } from '../../interfaces/services-Items.interface';
+import { IFrequentQuestionsItems } from '../../interfaces/frequent-questions-Items.interface';
 
 declare var bootstrap: any; // Declare Bootstrap as any
 
@@ -14,175 +19,15 @@ declare var bootstrap: any; // Declare Bootstrap as any
 })
 export class LandingPageComponent extends BaseComponent {
 
+  isBusy: boolean = false;
+
+  carouselItems : ICarouselItems[] = [];
+  offerItems : IOffersItems[] = [];
+  nwesItems : INwesItems[] = [];
+  servicesItems : IServiceslItems[] = [];
+  frequentQuestions : IFrequentQuestionsItems[] = [];
+
   activeIndex: number | null = null;
-
-  questions = [
-    {
-      header: 'ما هي منصة الطبي للرعاية الصحية',
-      content: 'منصة الطبي، المنصة الأولى في الوطن العربي التي تقدم خدمة الاستشارات الطبية عن بعد وتتيح للمرضى التواصل مع الأطباء المعتمدين مباشرة من خلال مكالمة هاتفية أو محادثة نصية. وهي المنصة الطبية العربية الأكبر التي تُعنى بتقديم المحتوى الطبي الموثوق.'
-    },
-    {
-      header: 'ما هي منصة الطبي للرعاية الصحية',
-      content: 'منصة الطبي، المنصة الأولى في الوطن العربي التي تقدم خدمة الاستشارات الطبية عن بعد وتتيح للمرضى التواصل مع الأطباء المعتمدين مباشرة من خلال مكالمة هاتفية أو محادثة نصية. وهي المنصة الطبية العربية الأكبر التي تُعنى بتقديم المحتوى الطبي الموثوق.'
-    },
-    {
-      header: 'ما هي منصة الطبي للرعاية الصحية',
-      content: 'منصة الطبي، المنصة الأولى في الوطن العربي التي تقدم خدمة الاستشارات الطبية عن بعد وتتيح للمرضى التواصل مع الأطباء المعتمدين مباشرة من خلال مكالمة هاتفية أو محادثة نصية. وهي المنصة الطبية العربية الأكبر التي تُعنى بتقديم المحتوى الطبي الموثوق.'
-    },
-    {
-      header: 'ما هي منصة الطبي للرعاية الصحية',
-      content: 'منصة الطبي، المنصة الأولى في الوطن العربي التي تقدم خدمة الاستشارات الطبية عن بعد وتتيح للمرضى التواصل مع الأطباء المعتمدين مباشرة من خلال مكالمة هاتفية أو محادثة نصية. وهي المنصة الطبية العربية الأكبر التي تُعنى بتقديم المحتوى الطبي الموثوق.'
-    }
-  ];
-
-  setActiveIndex(index: number | null) {
-    this.activeIndex = this.activeIndex === index ? null : index;
-  }
-
-  ourServicesItems : IOurServicesItems[] = [
-    {
-      icon: '',
-      label: 'Chat'
-    },
-    {
-      icon: '',
-      label: 'Call'
-    },
-    {
-      icon: '',
-      label: 'Video Call'
-    },
-    {
-      icon: '',
-      label: 'Home Health Care'
-    },
-    {
-      icon: '',
-      label: 'Nanny Visit'
-    },
-    {
-      icon: '',
-      label: 'Educational'
-    },
-    {
-      icon: '',
-      label: 'E-Commerce'
-    }
-  ];
-
-  swiperSliderItems: ISwiperSliderItems[] = [
-    {
-      id: 0,
-      description: 'Up to 50% discount',
-      image: '/assets/images/sectionOneImage.png',
-    },
-    {
-      id: 2,
-      description: 'Up to 50% discount',
-      image: '/assets/images/sectionFiveImage.png',
-    },
-    {
-      id: 3,
-      description: 'Up to 50% discount',
-      image: '/assets/images/sectionFourImage.jpeg',
-    },
-    {
-      id: 4,
-      description: 'Up to 50% discount',
-      image: '/assets/images/sectionOneImage.png',
-    },
-    {
-      id: 5,
-      description: 'Up to 50% discount',
-      image: '/assets/images/sectionFiveImage.png',
-    },
-    {
-      id: 6,
-      description: 'Up to 50% discount',
-      image: '/assets/images/sectionFourImage.jpeg',
-    },
-    {
-      id: 7,
-      description: 'Up to 50% discount',
-      image: '/assets/images/sectionOneImage.png',
-    },
-    {
-      id: 8,
-      description: 'Up to 50% discount',
-      image: '/assets/images/sectionFiveImage.png',
-    },
-    {
-      id: 9,
-      description: 'Up to 50% discount',
-      image: '/assets/images/sectionFourImage.jpeg',
-    }
-  ]
-
-  swiperSliderItemsTwo: ISwiperSliderItems[] = [
-    {
-      id: 0,
-      description: 'Nifas wins first place in SPARK program by MISK for aspiring entrepreneurs!',
-      image: '/assets/images/cardViewImageOne.jfif',
-      programName: 'SPARK program',
-      date: '13th December 2022'
-    },
-    {
-      id: 2,
-      description: 'Nifas wins first place in SPARK program by MISK for aspiring entrepreneurs!',
-      image: '/assets/images/cardViewImageTwo.jfif',
-      programName: 'SPARK program',
-      date: '13th December 2022'
-    },
-    {
-      id: 3,
-      description: 'Nifas wins first place in SPARK program by MISK for aspiring entrepreneurs!',
-      image: '/assets/images/cardViewImageThree.jfif',
-      programName: 'SPARK program',
-      date: '13th December 2022'      
-    },
-    {
-      id: 4,
-      description: 'Nifas wins first place in SPARK program by MISK for aspiring entrepreneurs!',
-      image: '/assets/images/cardViewImageOne.jfif',
-      programName: 'SPARK program',
-      date: '13th December 2022'      
-    },
-    {
-      id: 5,
-      description: 'Nifas wins first place in SPARK program by MISK for aspiring entrepreneurs!',
-      image: '/assets/images/cardViewImageTwo.jfif',
-      programName: 'SPARK program',
-      date: '13th December 2022'      
-    },
-    {
-      id: 6,
-      description: 'Nifas wins first place in SPARK program by MISK for aspiring entrepreneurs!',
-      image: '/assets/images/cardViewImageThree.jfif',
-      programName: 'SPARK program',
-      date: '13th December 2022'      
-    },
-    {
-      id: 7,
-      description: 'Nifas wins first place in SPARK program by MISK for aspiring entrepreneurs!',
-      image: '/assets/images/cardViewImageOne.jfif',
-      programName: 'SPARK program',
-      date: '13th December 2022'      
-    },
-    {
-      id: 8,
-      description: 'Nifas wins first place in SPARK program by MISK for aspiring entrepreneurs!',
-      image: '/assets/images/cardViewImageTwo.jfif',
-      programName: 'SPARK program',
-      date: '13th December 2022'      
-    },
-    {
-      id: 9,
-      description: 'Nifas wins first place in SPARK program by MISK for aspiring entrepreneurs!',
-      image: '/assets/images/cardViewImageThree.jfif',
-      programName: 'SPARK program',
-      date: '13th December 2022'      
-    }
-  ]
 
   @ViewChild('home') home!: ElementRef;
   @ViewChild('aboutUs') aboutUs!: ElementRef;
@@ -190,7 +35,7 @@ export class LandingPageComponent extends BaseComponent {
   @ViewChild('ourServices') ourServices!: ElementRef;
   @ViewChild('callUs') callUs!: ElementRef;
 
-  constructor(injector: Injector,public messagingService : MessagingService) {
+  constructor(injector: Injector,public messagingService : MessagingService, public landingPageService : LandingPageService) {
     super(injector);
 
     this.subscription = this.messagingService.subject('scrollToSection').subscribe({
@@ -200,7 +45,9 @@ export class LandingPageComponent extends BaseComponent {
     })
   }
 
-  ngSuperOnInit() { };
+  ngSuperOnInit() { 
+    this.loadData();
+  };
 
   ngSuperAfterViewInit() {
     const carouselElement = document.getElementById('carouselL');
@@ -209,11 +56,10 @@ export class LandingPageComponent extends BaseComponent {
         interval: 3000 // Adjust interval as needed (in milliseconds)
       });
     }
-   };
+  };
 
   ngSuperOnDestroy() { }
 
-  
   scrollToSection(section: string) {
     let element: ElementRef;
     switch (section) {
@@ -235,7 +81,51 @@ export class LandingPageComponent extends BaseComponent {
       default:
         return;
     }
-    element.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    element?.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  setActiveIndex(index: number | null) {
+    this.activeIndex = this.activeIndex === index ? null : index;
+  }
+
+  loadData() {
+    this.isBusy = true;
+    this.landingPageService.getAllData().subscribe({
+      next: (responses: any[]) => {
+        const [
+          slidersResponse,
+          offersResponse,
+          servicesResponse,
+          blogsResponse,
+          frequentQuestionsResponse
+        ] = responses;
+
+        if (slidersResponse.status) {
+          this.carouselItems = slidersResponse.data.collection;
+        }
+
+        if (offersResponse.status) {
+          this.offerItems = offersResponse.data.collection;
+        }
+
+        if (servicesResponse.status) {
+          this.servicesItems = servicesResponse.data.collection;
+        }
+
+        if (blogsResponse.status) {
+          this.nwesItems = blogsResponse.data.collection;
+        }
+
+        if (frequentQuestionsResponse.status) {
+          this.frequentQuestions = frequentQuestionsResponse.data.collection;
+        }
+
+        this.isBusy = false;
+      },
+      error: () => {
+        this.isBusy = false;
+      }
+    });
   }
 }
 

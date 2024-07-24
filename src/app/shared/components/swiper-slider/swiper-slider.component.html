@@ -22,10 +22,10 @@
                         
                         <div class="swiperSlider-item-container">
 
-                            <img [src]="item.image" />
+                            <img  src="http://185.182.187.242:1994//assets//images/{{item?.imagePath}}"/>
                             <div class="swiperSlider-item-endArea">
 
-                                <h5 class="three-dots"  matTooltip="{{item.description}}">{{item.description}}</h5>
+                                <h5 class="three-dots"  matTooltip="{{item.descOt}}">{{item.descOt}}</h5>
                                 <nifas-avatar [size]="40"/>
 
                             </div>
@@ -40,8 +40,8 @@
                         <div class="swiperSliderCardView-item-container">
                             <div class="swiperSliderCardView-item-start">
 
-                                <img [src]="item.image" />
-        
+                                <img  src="http://185.182.187.242:1994//assets//images/{{item?.imagePath}}"/>
+
                             </div>
                             <div class="swiperSliderCardView-item-end">
 
@@ -49,12 +49,12 @@
 
                                     <div class="swiperSliderCardView-item-end-h5Group">
 
-                                        <h6>{{item.programName}}</h6>
+                                        <h6>SPARK program</h6>
                                         <div class="divider1 divider1__vertical height-15"></div>
-                                        <h6>{{item.date}}</h6>
+                                        <h6>13th December 2022</h6>
         
                                     </div>
-                                    <h6 class="three-dots-2-line" matTooltip="{{item.description}}">{{item.description}}</h6>
+                                    <h6 class="three-dots-2-line" matTooltip="{{item.descOt}}">{{item.descOt}}</h6>
         
 
                                 </div>

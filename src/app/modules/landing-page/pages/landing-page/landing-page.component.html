@@ -1,118 +1,69 @@
 <div class="LandingPage">
 
-    <section class="sliderContainer" #home>
+    <section class="sliderContainer" #home [hidden]="!carouselItems.length">
 
         <div id="carouselL" class="carousel slide container" data-bs-ride="carousel">
 
             <div class="carousel-inner">
 
-              <div class="carousel-item active">
+              <ng-container *ngFor="let carouselItem of carouselItems;let index = index">
+                <div class="carousel-item" [class.active]="index === 0">
 
-                <div class="carousel-itemContainer">
-
-                    <div class="carousel-itemContainer-part carousel-itemContainer-part_flex1">
-
-                        <h3>Take Online</h3>
-                        <h1>Doctor <span>Consultation</span></h1>
-                        <h5>
-                            Connect instantly with a 24x7 specialist or choose to video visit a particular doctor.
-                        </h5>
-
-                      </div>
-                      <div class="carousel-itemContainer-part carousel-itemContainer-part_center carousel-itemContainer-part_flex1">
-
-                            <img class="mainImage" src="/assets/images/slide-photo.svg" />
-                            <img class="badgeImage" src="/assets/images/Frame 1.png" />
-
-                      </div>
-
-                </div>
-
-              </div>
-
-              <div class="carousel-item">
-
-                <div class="carousel-itemContainer">
-
-                    <div class="carousel-itemContainer-part carousel-itemContainer-part_flex1">
-
-                        <h3>Take Online</h3>
-                        <h1>Doctor <span>Consultation</span></h1>
-                        <h5>
-                            Connect instantly with a 24x7 specialist or choose to video visit a particular doctor.
-                        </h5>
-
-                      </div>
-                      <div class="carousel-itemContainer-part carousel-itemContainer-part_center carousel-itemContainer-part_flex1">
-
-                            <img class="mainImage" src="/assets/images/slide-photo.svg" />
-                            <img class="badgeImage" src="/assets/images/Frame 1.png" />
-
-                      </div>
-
-                </div>
-
-              </div>
-
-              <div class="carousel-item">
-
-                <div class="carousel-itemContainer">
-
-                    <div class="carousel-itemContainer-part carousel-itemContainer-part_flex1">
-
-                        <h3>Take Online</h3>
-                        <h1>Doctor <span>Consultation</span></h1>
-                        <h5>
-                            Connect instantly with a 24x7 specialist or choose to video visit a particular doctor.
-                        </h5>
-
-                      </div>
-                      <div class="carousel-itemContainer-part carousel-itemContainer-part_center carousel-itemContainer-part_flex1">
-
-                            <img class="mainImage" src="/assets/images/slide-photo.svg" />
-                            <img class="badgeImage" src="/assets/images/Frame 1.png" />
-
-                      </div>
-
-                </div>
-
-              </div>
+                    <div class="carousel-itemContainer">
+    
+                        <div class="carousel-itemContainer-part carousel-itemContainer-part_flex1">
+    
+                            <h1>
+                                {{carouselItem?.titleOt}}
+                            </h1>
+                            <h5>
+                                {{carouselItem?.descOt}}
+                            </h5>
+    
+                          </div>
+                          <div class="carousel-itemContainer-part carousel-itemContainer-part_center carousel-itemContainer-part_flex1">
+    
+                                <img class="mainImage" src="http://185.182.187.242:1994//assets//images/{{carouselItem?.imagePath}}" />
+    
+                          </div>
+    
+                    </div>
+    
+                  </div>
+              </ng-container>
 
             </div>
             <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselL" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1">
-                    <span></span>
-                </button>
-                <button type="button" data-bs-target="#carouselL" data-bs-slide-to="1" aria-label="Slide 2">
-                    <span></span>
-                </button>
-                <button type="button" data-bs-target="#carouselL" data-bs-slide-to="2" aria-label="Slide 3">
-                    <span></span>
-                </button>
+                <ng-container *ngFor="let carouselItem of carouselItems;let index = index">
+                    <button type="button" data-bs-target="#carouselL" [attr.data-bs-slide-to]="index" [class.active]="index === 0" [attr.aria-current]="index === 0 ? 'true' : null" [attr.aria-label]="'Slide ' + (index + 1)">
+                        <span></span>
+                    </button>
+                </ng-container>
             </div>
 
         </div>
 
     </section> 
    
-    <section class="container">
-        <nifas-swiper-slider [items]="swiperSliderItems" [sectionTitle]="'Our Offers'"/>
+    <section class="container" *ngIf="carouselItems.length">
+        <nifas-swiper-slider [items]="offerItems" [sectionTitle]="'Our Offers'"/>
     </section> 
 
-    <section class="ourServicesSection" #ourServices>
+    <section class="ourServicesSection" #ourServices *ngIf="servicesItems.length">
 
         <div class="ourServicesSection-container container">
 
             <h1>Our Services</h1>
             <div class="ourServicesSection-container-end">
-                @for(item of ourServicesItems;track $index){
-                <div class="ourServicesItem">
 
-                    <img class="badgeImage" src="/assets/images/Heart Rate.svg" />
-                    <h6>{{item.label}}</h6>
+                <ng-container *ngFor="let servicesItem of servicesItems;let index = index">
+                    <div class="ourServicesItem">
 
-                </div>
-                }
+                        <img class="badgeImage" src="/assets/images/Heart Rate.svg" />
+                        <h6>{{servicesItem.nameOt}}</h6>
+    
+                    </div>
+                </ng-container>
 
             </div>
 
@@ -194,15 +145,15 @@
         </div>
         <div class="aboutAsSection-background"></div>
 
-    </section> 
+    </section>
 
-   <section class="container" #ourNews>
-        <nifas-swiper-slider
-            [items]="swiperSliderItemsTwo"
-            [isCardView]="true"
-            [sectionOthorTitle]="'Blog & News'"
-            [sectionTitle]="'Read Our Latest News'"/>
-    </section> 
+    <section class="container" #ourNews *ngIf="nwesItems.length">
+            <nifas-swiper-slider
+                [items]="nwesItems"
+                [isCardView]="true"
+                [sectionOthorTitle]="'Blog & News'"
+                [sectionTitle]="'Read Our Latest News'"/>
+    </section>
 
     <section class="downloadAppSection container">
 
@@ -249,7 +200,7 @@
 
     </section> 
        
-    <section class="mostFrequentlyAskedQuestions container" #callUs>
+    <section class="mostFrequentlyAskedQuestions container" *ngIf="frequentQuestions.length" #callUs>
 
         <h1>الأسئلة الأكثر شيوعاً</h1>
         <h4>
@@ -259,14 +210,14 @@
 
 
                 <p-accordion>
-                    <div class="mostFrequentlyAskedQuestions-card" *ngFor="let question of questions; let i = index">
+                    <div class="mostFrequentlyAskedQuestions-card" *ngFor="let frequentQuestion of frequentQuestions; let i = index">
                         <p-accordionTab>
                             <ng-template pTemplate="header">
                                 <span>
-                                    {{ question.header }} <span class="qIcon">?</span>
+                                    {{ frequentQuestion.questionOt }} 
                                 </span>
                             </ng-template>
-                            <p>{{ question.content }}</p>
+                            <p>{{ frequentQuestion.answerOt }}</p>
                         </p-accordionTab>
                     </div>
                 </p-accordion>
@@ -277,3 +228,5 @@
     </section>    
 
 </div>
+
+<nifas-loader *ngIf="isBusy"/>

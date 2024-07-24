@@ -113,10 +113,6 @@ mat-toolbar {
 
                 span {
                     font-weight: bold;
-
-                    .qIcon {
-                        font-size: 18px;
-                    }
                 }
             }
 
@@ -133,4 +129,8 @@ mat-toolbar {
 
 .cdk-overlay-container {
     z-index: 10000;
+}
+
+.p-carousel-indicators.p-reset {
+    padding: 0 !important;
 }
