@@ -40,6 +40,8 @@ export abstract class BaseComponent implements OnInit {
       }
     });
 
+
+    //comment
     if(this._langService.getLanguage()) {
       this.language = this._langService.getLanguage()
     } else {
